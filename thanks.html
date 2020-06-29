@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+
+    <meta charset="UTF-8">
+	<title>Bitcoins Era</title>
+    <!-- <base href="/bitcoinera/"> -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="app/build/css/build.min.css">
+    <link rel="stylesheet" href="app/vendor/intl-tel-input/build/intlTelInput.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+
+    <link href="js/videojs/video-js.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/index.css?v=1592989486">
+	
+	<link rel="stylesheet" href="app/intlTelInput.min.css">
+	<link rel="stylesheet" href="app/cks/jquery.cookieBar.min.css">
+
+
+	<script type="text/javascript" src="js/jquery-1.11.3.js?v=1586423887"></script>
+	<script type="text/javascript" src="js/popper.min.js?v=1586423887"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?v=1586423887"></script>
+	<script type="text/javascript" src="js/videojs/video.js?v=1586423887"></script>
+	
+	<link rel="stylesheet" href="css/intgrtn.css?v=1586423887">
+</head>
+<body ng-controller="SubscribeController as sc">
+    
+    
+    <section class="intro-section-1">
+	<div class="container">
+		<p class="intro-p"><b data-i18n>WARNING</b>:<span data-i18n>Due to extremely high media demand, we will close registration as of</span> <b><span class="tomorrow-date">05/07/2018</span> - <span data-i18n>HURRY!</span> </b><span class="countdown-span">05:32</span></p>
+	</div>
+</section>
+
+
+<section class="intro-section-2">
+	<div class="container">
+		<div class="intro-part-2 row">
+			<img src="img/logo.png" alt="logo" class="logo">
+			<div class="exclusive-offers-wrapper intro-margin-div none">
+				<div style="margin-right: 10px;"><span class="purple" data-i18n>Exclusive offers for</span> <br> <span class="red" data-i18n>trades in</span> <span class="country-name-custom red"></span></div>
+				<div class="countryflag">
+
+				</div>
+			</div>
+			<div class="dynamic-person-div none" id="notifications">
+				<div class="dynamic-person-img-wrapper">
+					<img data-image src="img/25.jpg" alt="" class="dynamic-person-img">
+				</div>
+				<p class="dynamic-person-p">
+					<span data-name class="dynamic-person-name-span">
+						Nikole C.
+					</span>
+					<br>
+					<span data-i18n>just made</span>
+					<br>
+					<span data-visitor-currency-symbol class="dollar-shake">$</span>
+					<span data-amount class="dynamic-person-sum-span">
+						350
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="video-form-section" id="homes">
+	<div class="container">
+		<h1 class="video-header" data-i18n>Thank you for registration!</h1>
+		<p class="video-subheader">Shortly our manager will contact you</p>
+		<div class="row" style="margin-bottom: -157px;">
+			<div class="col-md-6" style="margin: 0 auto;">
+				<div class="video-wrapper">
+					<video class="video-js vjs-default-skin vjs-big-play-centered video" id="video" data-setup='{"controls": true, "autoplay": "any", "preload": "metadata", "fluid": true, "poster": "img/videothumbnail.jpg"}'>
+						<source src="img/en-1.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<style>
+	
+	
+	#regForm {
+		width: 100%;
+	}
+	
+	h1 {
+	  text-align: center;  
+	}
+	
+	input {
+		padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+
+	input.error{
+		border: 1px solid red;
+	}
+
+	.iti.error{
+		border: 1px solid red;
+	}
+	
+	/* Mark input boxes that gets an error on validation: */
+	input.invalid {
+	  background-color: #ffdddd;
+	}
+
+	span.err{
+		display: none;
+		font-size: 16px;
+		color: red;
+		text-align: right;
+		margin-top: -5px;
+		margin-bottom: 10px;
+	}
+	span.err.active{
+		display: block;
+
+	}
+	input.error + span.err{
+		display: block;
+	}
+	
+	/* Hide all steps by default: */
+	.tab {
+	  display: none;
+	}
+	
+	/* form button {
+	  background-color: #4CAF50;
+	  color: #ffffff;
+	  border: none;
+	  padding: 10px 20px;
+	  font-size: 17px;
+	  font-family: Raleway;
+	  cursor: pointer;
+	} */
+	
+	form button:hover {
+	  opacity: 0.8;
+	}
+	
+	#prevBtn {
+	  background-color: #bbbbbb;
+	}
+
+	#nextBtn{
+		margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+    padding: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-image: linear-gradient(166deg, #156cff 1%, #0e49ff);
+    text-transform: uppercase;
+	border: none;
+    width: 90%;
+    height: 64px;
+    cursor: pointer;
+    white-space: normal;
+    text-align: center;
+	}
+
+	#regFormm button{
+		margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    color: #ffffff;
+    padding: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-image: linear-gradient(166deg, #156cff 1%, #0e49ff);
+    text-transform: uppercase;
+	border: none;
+    width: 90%;
+    height: 64px;
+    cursor: pointer;
+    white-space: normal;
+    text-align: center;
+	}
+	
+	/* Make circles that indicate the steps of the form: */
+	.step {
+		display: inline-block;
+    background-color: #fff28a;
+    color: white;
+    font-size: 2em;
+    line-height: 1.1em;
+    font-weight: bold;
+    height: 7px;
+    width: 33%;
+    margin-right: 2px;
+    border-radius: 0;
+    text-indent: 100%;
+    overflow: hidden;
+	}
+	
+	.step.active {
+		background-color: #fd57a5;
+	}
+	
+	/* Mark the steps that are finished and valid: */
+	.step.finish {
+	  background-color: #4CAF50;
+	}
+
+
+	.form {width: 300px; margin: 20px auto;}
+		.field input {font-size: 14px; padding: 2px; border: 0; outline: none; margin-bottom: 0; width: auto;}
+		
+		.field label {padding: 2px 0; display: block; color: #666;}
+	</style>
+
+
+
+<script>
+	$(function () {
+		var interval = setInterval(function () {
+			$.ajax("https://poloniex.com/public?command=returnTicker")
+				.success(function (r) {
+					$('[data-init="bid-price"]').text((r["USDT_BTC"]["highestBid"] / 100).toFixed(2));
+					$('[data-init="ask-price"]').text((r["USDT_BTC"]["lowestAsk"] / 100).toFixed(2));
+				})
+				.error(function () {
+					clearInterval(interval);
+					$('[data-init="ask-price"], [data-init="bid-price"]').parents(".ask-wrapper, .bid-wrapper").hide();
+				});
+		}, 2000);
+	});
+</script>
+<footer class="footer text-center" style="margin-top: 150px;">
+	<div class="container">
+		<ul class="footer-ul">
+			<li><a href="#homes" class="scroll-top-btn" data-i18n>Home</a></li>
+			<!-- <li><a data-intgrtn-link-agreements="1" href="" class="" data-i18n>Website Agreement</a></li> -->
+			<!-- <li><a data-intgrtn-link-agreements="2" href="" class="" data-i18n>Risk Disclaimer</a></li> -->
+			<li><a href="policy.html" class="" >Privacy Policy</a></li>
+			<!-- <li class="spam-disclaimer hidden"><a data-intgrtn-link-agreements="7" href="" class="" data-i18n>Spam Disclaimer</a></li> -->
+			<!-- <li><a data-intgrtn-link-report-abuse="" href="" class="" data-i18n>Report Abuse</a></li> -->
+			<!-- <li><a data-intgrtn-link-contact-us="" href="" class="" data-i18n>Contact Us</a></li> -->
+		</ul>
+
+        <div data-intgrtn-agreements="" data-intgrtn-type="4" class="container"></div>
+		<img src="img/logo.png" class="footer-logo" alt="logo">
+	</div>
+</footer>
+
+
+
+
+
+<div class="exitblock">
+    <div class="fon"></div>    
+    <div class="modaltext">    
+		<h3>Get access
+		</h3>
+
+		<form id="regFormm" action="/action_page.php">
+			<!-- One "tab" for each step in the form: -->
+			<div class="tabb">
+			  <input class="txtf" placeholder="First name" name="fname" id="namee" >
+			  <input class="txtf" placeholder="Last name." name="lname" id="lastnamee" >
+			  <input placeholder="E-mail"  name="email" id="email">
+			  <span class="err">Enter valid mail</span>
+
+			</div>
+			
+			<div class="tabb">
+			  <input type="password" placeholder="Password" name="" id="newpasss">
+			  <input type="password" placeholder="Confirm password" name="" id="comfirmpasss">
+			  <span class="err">password mismatch</span>
+			</div>
+
+			<div class="tabb field">
+				<input type="tel" class="telephone"  placeholder="" id="telephonee">
+				<span class="err">number must contain no less than 11 characters</span>
+			  </div>
+			
+			<div style="overflow:auto;">
+			  <div>
+				<!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
+				<button type="button" >SUBMIT</button>
+			  </div>
+			</div>
+			
+		  </form>
+    </div>
+    <div class="closeblock">+</div>
+</div>
+
+<style>
+		#regFormm {
+		width: 100%;
+	}
+	.exitblock {    
+opacity: 0;
+visibility: hidden;
+transition: all .3s ease;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:100000;
+}    
+.exitblock.active {
+	opacity: 1;
+visibility: visible;
+}   
+.exitblock .fon {
+    background: #000000;
+    opacity:.8;
+    position:fixed;
+    width:100%;
+    height:100%;
+}
+.exitblock .modaltext {
+    box-sizing: border-box;  
+    padding:20px 40px;
+    background: #F6FCFF;
+	background-image: url(img/features-section-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position:fixed;
+    top:80px;
+    left:40%;
+    width:100%;
+	max-width: 420px;
+    box-shadow: 0 4px 10px 2px rgba(0,0,0,0.5);
+}       
+
+.exitblock .modaltext h3{
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	margin-bottom: 20px;
+}
+.closeblock {
+    cursor:pointer;
+    position: fixed;
+    line-height:60px;
+    font-size:82px;
+    transform: rotate(45deg);
+    text-align:center;
+    top:20px;
+    right:30px;
+    color: #ffffff;    
+}
+.closeblock:hover {
+    opacity: 0.8;
+}
+</style>
+
+<script>
+	$(document).mouseleave(function(e){
+    if (e.clientY < 10) {
+		
+		$(".exitblock").addClass("active");
+		
+    }    
+});
+$(document).click(function(e) {
+    if (($(".exitblock").is(':visible')) && (!$(e.target).closest(".exitblock .modaltext").length)) {
+        $(".exitblock").remove();
+    }
+});
+
+
+</script>
+
+<style>
+	.iti {
+		width: 100%;
+		background: #ffffff;
+		height: 38px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+</style>
+
+
+<script src="js/sripts.js"></script>
+
+<!-- <script>
+	$(function () {
+		$('.js-pwd-tooltip-icon').tooltip({template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'});
+		let today = new Date();
+		let dd = today.getDate();
+		let mm = today.getMonth() + 1; //January is 0!
+		let yyyy = today.getFullYear();
+		let tomorrowsDate = dd + "/" + mm + '/' + yyyy;
+
+		$('.tomorrow-date').text(tomorrowsDate);
+		
+		var totalTimeInSeconds = 5 * 60 + 31;
+		function updateTimer() {
+			setTimeout(function () {
+				var minutes = Math.floor(totalTimeInSeconds / 60),
+					seconds = totalTimeInSeconds % 60;
+				if (minutes < 10) {
+					minutes = "0" + minutes;
+				}
+				if (seconds < 10) {
+					seconds = "0" + seconds;
+				}
+				totalTimeInSeconds--;
+				$('.countdown-span').text(minutes + ':' + seconds);
+				if (totalTimeInSeconds >= 0) {
+					updateTimer();
+				}
+			}, 1000);
+		}
+
+		updateTimer();
+	});
+
+	$('.scroll-top-btn').on("click", function (e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: $(".formHeader").offset().top - 100
+		}, 1000);
+	});
+
+	var countryColors = {
+		"AT": ['#ed2939', '#ed2939'],
+		"AU": ['#00008b', '#ff0000'],
+		"CH": ['#ff0000', '#ff0000'],
+		"DE": ['#000000', '#dd0000'],
+		"DK": ['#c60c30', '#c60c30'],
+		"GB": ['#ff0000', '#00008b'],
+		"IE": ['#169b62', '#ff883e'],
+		"IT": ['#009246', '#ce2b37'],
+		"NL": ['#ae1c28', '#21468b'],
+		"NO": ['#ef2b2d', '#002868'],
+		"NZ": ['#00247d', '#cc142b'],
+		"SE": ['#006aa7', '#fecc00'],
+		"ZA": ['#FFB612', '#007A4D'],
+	};
+
+	function rotateNotifications(peopleArray) {
+		var index = Math.floor(Math.random() * peopleArray.length),
+			name = peopleArray[index].name + ' ' + peopleArray[index].surname.charAt(0) + '.',
+			image = peopleArray[index].photo,
+			amount = Math.floor(50 + Math.random() * 200),
+			delay = 3000 + Math.random() * 6000,
+			wrapper = $('#notifications');
+		wrapper.find('[data-name]').text(name);
+		wrapper.find('[data-image]').addClass('shake');
+		setTimeout(function () {
+			wrapper.find('[data-image]').removeClass('shake');
+		}, 1000);
+		wrapper.find('[data-image]').attr('src', image);
+		wrapper.find('[data-amount]').text(amount);
+		wrapper.find('[data-amount]').addClass('shake');
+		setTimeout(function () {
+			wrapper.find('[data-amount]').removeClass('shake');
+		}, 1000);
+		wrapper.find('[data-visitor-currency-symbol]').addClass('shake');
+		setTimeout(function () {
+			wrapper.find('[data-visitor-currency-symbol]').removeClass('shake');
+		}, 1000);
+		setTimeout(function () {
+			rotateNotifications(peopleArray);
+		}, delay);
+	}
+
+	function generateLiveResultsTableContent(peopleArray, currencySymbol) {
+		var currenciesArray = ["LTC/EOS", "ETH/LTC", "BTC/ETH", "EOS/ETH"],
+			index = Math.floor(Math.random() * peopleArray.length),
+			name = peopleArray[index].name + ' ' + peopleArray[index].surname.charAt(0) + '.',
+			amount = Math.floor(50 + Math.random() * 200),
+			randomCurrencyIndex = Math.floor(Math.random() * 3) + 1,
+			randomCurrency = currenciesArray[randomCurrencyIndex];
+
+		var today = new Date(),
+			dd = today.getDate(),
+			mm = today.getMonth() + 1,
+			yyyy = today.getFullYear();
+		if (mm < 10) {
+			mm = '0' + mm;
+		}
+		if (dd < 10) {
+			dd = '0' + dd;
+		}
+		var todaysDate = dd + '/' + mm + '/' + yyyy;
+
+		var allTrs = $('.tbody').children();
+		var lastTr = $(allTrs[allTrs.length - 1]);
+		var preLastTr = $(allTrs[allTrs.length - 2]);
+		var td1 = '<td class="bold">' + name + " just won trade...</td>";
+		var td2 = '<td class="bold">' + currencySymbol + amount + "</td>";
+		var td3 = '<td class="trade-time-td padding-left-td">' + todaysDate + "</td>";
+		var td4 = '<td>' + randomCurrency + '</td>';
+		var td5 = '<td><img src="img/tick.png" alt="tick"></td>';
+		var newTr = $('<tr/>');
+		newTr.append(td1);
+		newTr.append(td2);
+		newTr.append(td3);
+		newTr.append(td4);
+		newTr.append(td5);
+		$('.tbody').prepend(newTr);
+		lastTr.remove();
+		preLastTr.children('td').addClass('last-td');
+	}
+	//TODO Rename the functions
+	function fillLiveResultsTable(peopleArray, currencySymbol) {
+		var delay = 3000 + Math.random() * 6000;
+		//TODO Rename the functions
+		generateLiveResultsTableContent(peopleArray, currencySymbol);
+
+		setTimeout(function () {
+			fillLiveResultsTable(peopleArray, currencySymbol);
+		}, delay);
+	}
+
+	document.addEventListener("visitorLocated", function (e) {
+		var countryIso = e.detail.countryIsoCode.toLowerCase(),
+			country = e.detail.country;
+
+		$.ajax({
+			method: 'head',
+			url: 'flags/special/' + countryIso + '.png',
+			success: function () {
+				$('.flag')
+					.css("height", "auto")
+					.css("border", "none")
+					.attr("src", 'flags/special/' + countryIso + '.png');
+			},
+			error: function () {
+				$('.flag')
+					.css("width", "80px")
+					.css("height", "auto")
+					.css("border", "none")
+					.attr("src", 'flags/4x3/' + countryIso + '.svg');
+			}
+		});
+
+
+		$('.country-name-custom').each(function () {
+			var obj = $(this);
+			var countryIsoUpper = countryIso.toUpperCase();
+			if (countryColors.hasOwnProperty(countryIsoUpper)) {
+				var words = country.split(/ (.+)/);
+				if (words.length < 2) {
+					words[0] = country.substring(0, country.length / 2);
+					words[1] = country.substring(country.length / 2);
+				} else {
+					words[0] += ' ';
+				}
+				$('<span/>').css('color', countryColors[countryIsoUpper][0]).text(words[0].toUpperCase()).appendTo(obj);
+				$('<span/>').css('color', countryColors[countryIsoUpper][1]).text(words[1].toUpperCase()).appendTo(obj);
+			} else {
+				obj.text(country);
+			}
+			$('.flag-wrapper').removeClass('hidden');
+		});
+
+		var currencySymbol = "$";
+		switch (e.detail.countryIsoCode) {
+			case"GB":
+				currencySymbol = "£";
+				break;
+			case"AT":
+			case"DE":
+			case"CH":
+			case"NL":
+			case"FR":
+			case"ES":
+			case"IT":
+			case"SE":
+			case"DK":
+			case"NO":
+			case"FI":
+				currencySymbol = "€";
+				break;
+			case"ZA":
+				currencySymbol = "R";
+				break;
+			default:
+				currencySymbol = "$";
+		}
+		$("[data-visitor-currency-symbol]").text(currencySymbol);
+
+		var url = "/uinames/api/?amount=50&ext",
+			region = ['Great Britain', 'United Kingdom'].indexOf(country) > -1 ? 'England' : country;
+
+		function initSocialProof (response) {
+			$('#notifications').removeClass('hidden');
+			rotateNotifications(response);
+			$('.live-results-table tbody tr').each(function (e) {
+				generateLiveResultsTableContent(response, currencySymbol);
+			});
+			fillLiveResultsTable(response, currencySymbol);
+		}
+
+		$.ajax({
+			type: "get",
+			url: url + '&region=' + region,
+			success: function (response) {
+				initSocialProof(response);
+			},
+			error: function (response) {
+				region = 'England';
+				$.ajax({
+					type: "get",
+					url: url + '&region=' + region,
+					success: function (response) {
+						initSocialProof(response);
+					},
+				});
+			},
+		});
+	});
+</script> -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var list;
+
+	$.getJSON('https://api.ipdata.co/?api-key=test', function (data) {
+							$('.countryflag').html('<img src="'+  data.flag +'">');
+				$('.country-name-custom').text(data.country_name);
+			});
+</script>
+<script>
+	$.get("https://ipinfo.io", function (response) { 
+	
+	
+		let country = 'ru';
+			
+		
+			
+				country = (response.country).toLowerCase();
+
+
+			// console.log(country)
+
+				
+			
+			$(".telephone").intlTelInput({
+				// options here
+				allowDropdown:true,
+				autoPlaceholder:"polite",
+				initialCountry: country
+			});
+
+
+			
+
+
+}, "jsonp");
+
+
+
+
+
+</script>
+
+<script src="app/jquery-1.11.0.min.js"></script>
+<script src="app/jquery-ui-1.10.4.custom.min.js"></script>
+<!-- Use as a Vanilla JS plugin -->
+
+<script src="app/intlTelInput.min.js"></script>
+
+<!-- Use as a jQuery plugin -->
+
+<!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+
+<script src="app/intlTelInput-jquery.min.js"></script>
+
+<script src="app/cks/jquery.cookieBar.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$.cookieBar({
+                style: 'bottom',
+                infoLink: "https://bitcoinevotech.com/cookie-policy"
+            });
+	});
+</script>
+</body>
+</html>
+
+
+
+
