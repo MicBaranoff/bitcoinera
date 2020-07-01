@@ -95,7 +95,7 @@
 <section class="intro-section-2">
 	<div class="container">
 		<div class="intro-part-2 row">
-			<img src="img/logo.png" alt="logo" class="logo">
+			<img src="img/logo.svg" alt="logo" class="logo">
 			<div class="exclusive-offers-wrapper intro-margin-div none">
 				<div style="margin-right: 10px;"><span class="purple" data-i18n>Exclusive offers for</span> <br> <span class="red" data-i18n>trades in</span> <span class="country-name-custom red"></span></div>
 				<div class="countryflag">
@@ -128,55 +128,34 @@
 	<div class="container">
 		<h1 class="video-header" data-i18n>Bitcoin Is Making People Rich</h1>
 		<p class="video-subheader"><span data-i18n>And you can Become The</span> <span class="yellow" data-i18n>Next Millionaire...</span></p>
-		<div class="row" style="margin-bottom: -157px;">
-			<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-7">
 				<div class="video-wrapper">
 					<video class="video-js vjs-default-skin vjs-big-play-centered video" id="video" data-setup='{"controls": true, "autoplay": "any", "preload": "metadata", "fluid": true, "poster": "img/videothumbnail.jpg"}'>
 						<source src="img/en-1.mp4" type="video/mp4">
 					</video>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-5">
 				<div class="form-container">
 					<h1 class="formHeader" data-i18n>CHANGE YOUR LIFE TODAY!</h1>
 					<div class="formwrap-outer">
-						<div class="intgrtn-form-signup formwrap">
-							<!-- Circles which indicates the steps of the form: -->
-							<div style="display: flex; text-align:center;margin-bottom:20px;">
-								<span class="step active"></span>
-								<span class="step"></span>
-								<span class="step"></span>
-							  </div>
-							<form id="regForm" action="/action_page.php">
-								<!-- One "tab" for each step in the form: -->
-								<div class="tab">
-								  <input class="txtf" placeholder="First name" name="fname" id="name1" >
-								  <input class="txtf" placeholder="Last name." name="lname" id="lastname1" >
-								  <input placeholder="E-mail"  name="email" id="email">
-								  <span class="err">Enter valid mail</span>
-
-								</div>
-								
-								<div class="tab">
-								  <input type="password" name="" id="newpass" placeholder="Password">
-								  <input type="password" name="" id="comfirmpass" placeholder="Confirm password">
-								  <span class="err">password mismatch</span>
-								</div>
-
-								<div class="tab field">
-									<input type="tel" class="telephone"  placeholder="" id="telephone">
-									<span class="err">number must contain no less than 11 characters</span>
-								  </div>
-								
-								<div style="overflow:auto;">
-								  <div>
-									<!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
-									<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-								  </div>
-								</div>
-								
-							  </form>
-						</div>
+						<form id="regForm" action="/action_page.php">
+							<!-- One "tab" for each step in the form: -->
+							<div class="inpt-box">
+								<input class="txtf " placeholder="First name" name="fname" id="name1" >
+								  <input class="txtf " placeholder="Last name." name="lname" id="lastname1" >
+							</div>
+							  <input required placeholder="E-mail"  name="email" id="email">
+							  <span class="err">enter your valid e-mail account</span>
+							  <input required type="password" name="" class="password" id="newpass" placeholder="Password">
+							  <span class="err">password must be 6-12 characters long</span>
+							  <input required type="tel" class="telephone"  placeholder="" id="telephone">
+							  <span class="err">password must be 6-12 characters long</span>
+							  <button type="button" type="submit" id="submit">GIVE ME ACCESS NOW</button>
+							
+							
+						  </form>
 					</div>
 				</div>
 			</div>
@@ -259,7 +238,7 @@
 	  background-color: #bbbbbb;
 	}
 
-	#nextBtn{
+	#submit{
 		margin: 0 auto;
     display: block;
     font-size: 20px;
@@ -390,6 +369,7 @@
 					<span data-i18n>Join Us and Start Getting Rich</span>
 					<span style="color: #5f3394" data-i18n>with Bitcoins Era!</span>
 				</h1>
+				
 				<br>
 				<p class="join-us-p">
 					<span data-i18n>The Bitcoins Era is a group reserved exclusively to people who jumped on the insane returns that Bitcoin offers and have quietly amassed a fortune in doing so. Our members enjoy retreats around the world every month while they make money on their laptop with just a few minutes of “work” every day.</span>
@@ -797,12 +777,12 @@
 		</ul>
 
         <div data-intgrtn-agreements="" data-intgrtn-type="4" class="container"></div>
-		<img src="img/logo.png" class="footer-logo" alt="logo">
+		<img src="img/logo.svg" class="footer-logo" alt="logo">
 	</div>
 </footer>
 
 
-
+<div><div class="btc-box-fix"><div class="btc-box-fix-img"><img src="data:image/png;base64,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" alt=""></div><div class="btc-box-fix-content"><span class="blue-span">Bitcoin</span><div class="btc-live-price"><span class="btc-live-price-bid">▲9,538.80</span><span class="btc-live-price-ask">9,558.98▼</span></div></div></div></div>
 
 
 <div class="exitblock">
@@ -813,31 +793,18 @@
 
 		<form id="regFormm" action="/action_page.php">
 			<!-- One "tab" for each step in the form: -->
-			<div class="tabb">
-			  <input class="txtf" placeholder="First name" name="fname" id="namee" >
-			  <input class="txtf" placeholder="Last name." name="lname" id="lastnamee" >
-			  <input placeholder="E-mail"  name="email" id="email">
-			  <span class="err">Enter valid mail</span>
-
+			<div class="inpt-box">
+				<input class="txtf " placeholder="First name" name="fname" id="name1" >
+				  <input class="txtf " placeholder="Last name." name="lname" id="lastname1" >
 			</div>
+			  <input required placeholder="E-mail"  name="email" id="email">
+			  <span class="err">enter your valid e-mail account</span>
+			  <input required type="password" name="" class="password" id="newpass" placeholder="Password">
+			  <span class="err">password must be 6-12 characters long</span>
+			  <input required type="tel" class="telephone"  placeholder="" id="telephone">
+			  <span class="err">password must be 6-12 characters long</span>
+			  <button type="button" type="submit" id="submit">GIVE ME ACCESS NOW</button>
 			
-			<div class="tabb">
-			  <input type="password" placeholder="Password" name="" id="newpasss">
-			  <input type="password" placeholder="Confirm password" name="" id="comfirmpasss">
-			  <span class="err">password mismatch</span>
-			</div>
-
-			<div class="tabb field">
-				<input type="tel" class="telephone"  placeholder="" id="telephonee">
-				<span class="err">number must contain no less than 11 characters</span>
-			  </div>
-			
-			<div style="overflow:auto;">
-			  <div>
-				<!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
-				<button type="button" >SUBMIT</button>
-			  </div>
-			</div>
 			
 		  </form>
     </div>
@@ -939,7 +906,7 @@ $(document).click(function(e) {
 
 <script src="js/sripts.js"></script>
 
-<!-- <script>
+<script>
 	$(function () {
 		$('.js-pwd-tooltip-icon').tooltip({template: '<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'});
 		let today = new Date();
@@ -1169,7 +1136,7 @@ $(document).click(function(e) {
 			},
 		});
 	});
-</script> -->
+</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

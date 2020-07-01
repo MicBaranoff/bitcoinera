@@ -302,11 +302,9 @@ p.form-disclaimers {
   }
 }
 body .seenon-p {
-  color: white;
   pointer-events: none;
 }
 body .fake-news-logos-wrapper {
-  display: none;
 }
 
 /*# sourceMappingURL=intgrtn.css.map */

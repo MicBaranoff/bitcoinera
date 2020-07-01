@@ -122,7 +122,7 @@ img, .video{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .video-header, .video-subheader{
@@ -131,13 +131,26 @@ img, .video{
 }
 
 .video-header{
-    font-size: 3.5rem;
+    font-size: 30px;
     font-weight: bolder;
 }
 
 .video-subheader{
     font-size: 2em;
     font-weight: 300;
+}
+
+.video-subheader span{
+    font-size: 20px;
+}
+.video-subheader span.yellow{
+    font-weight: bold;
+    
+}
+
+.formwrap-outer{
+    padding: 10px;
+    background: url(../img/form-bg.jpg) no-repeat 50%/cover;
 }
 
 .video{
@@ -233,17 +246,54 @@ form[data-init][data-mode="slidingform"] [data-subject="wrapper"]{
     background-repeat: no-repeat;
     text-align: center;
     color: white;
-    font-weight: 700;
+    font-weight: bold;
     margin: 0;
-    padding: 50px 20px;
-    padding-top: 30px;
+    padding: 20px;
     font-size: 2.3rem;
     letter-spacing: 2px;
 }
 
+.inpt-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inpt-box input{
+    width: 48%;
+}
+
 .logos-section{
     padding: 50px 0;
-    padding-top: 150px;
+}
+
+.btc-box-fix {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 500;
+    width: 270px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: #eee;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+}
+.btc-box-fix-content {
+    margin-left: 15px;
+}
+.blue-span {
+    color: #1070e0;
+}
+.btc-live-price-bid {
+    margin-right: 10px;
+    color: green;
+}
+.btc-live-price-ask {
+    color: red;
 }
 
 .logos-wrapper{
@@ -457,6 +507,8 @@ th, td{
     margin: 50px 0;
     font-size: 3em;
 }
+
+
 
 .yellow-btn{
     -webkit-transform: translateX(-50%);

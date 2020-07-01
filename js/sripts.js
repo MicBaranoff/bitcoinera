@@ -41,11 +41,11 @@ $(document).ready(function(){
   
         let l = $(this).val().length;
         if(l<11){
-          $('.iti').addClass('error')
-          $(this).parent().parent().find('span.err').addClass('active')
+          $(this).addClass('error');
+          $(this).next().addClass('active')
         } else if(l>=11 || l==0){
-          $('.iti').removeClass('error')
-          $(this).parent().parent().find('span.err').removeClass('active')
+          $(this).next().removeClass('active')
+          $(this).removeClass('error');
         } else if (l>16){
           $this.val($this.val().substr(0, 16));		
         }
@@ -56,29 +56,31 @@ $(document).ready(function(){
           $this.val($this.val().substr(0, 16));			
       });
 
-      $("input#comfirmpass").on("blur", function(e) {
+      $("input.password").on("blur", function(e) {
   
-        let val = $("input#newpass").val();
-        let nval = $(this).val();
-       if(val != nval){
-        $(this).addClass('error');
-       }  else {
+        let l = $(this).val().length;
+        if(l<6){
+          $(this).addClass('error');
+          $(this).next().addClass('active')
+        } else if(l>=11 || l==0){
+          $(this).next().removeClass('active')
           $(this).removeClass('error');
-         } 
-       
+        } else if (l>16){
+          $this.val($this.val().substr(0, 16));		
+        }
+      });
+      $("input.password").on("keyup", function(e) {
+        var $this = $(this);
+        if($this.val().length > 16)
+          $this.val($this.val().substr(0, 16));			
+      });
+      $("input.telephone").on("keyup", function(e) {
+        var $this = $(this);
+        if($this.val().length > 16)
+          $this.val($this.val().substr(0, 16));			
       });
 
-      $("input#comfirmpasss").on("blur", function(e) {
-  
-        let val1 = $("input#newpasss").val();
-        let nval = $(this).val();
-       if(val1 != nval){
-        $(this).addClass('error');
-       }  else {
-          $(this).removeClass('error');
-         } 
-       
-      });
+      
     // Устанавливаем обработчик потери фокуса для всех полей ввода текста
     $('input#name, input#email, textarea#message').unbind().blur( function(){
 
@@ -152,19 +154,20 @@ $(document).ready(function(){
               var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
               if(val != '' && rv_email.test(val))
               {
+                $(this).removeClass('error');
                  $(this).addClass('not_error');
-                 $(this).next('.error-box').text('Принято')
-                                           .css('color','green')
-                                           .animate({'paddingLeft':'10px'},400)
-                                           .animate({'paddingLeft':'5px'},400);
+                //  $(this).next('.error-box').text('Принято')
+                //                            .css('color','green')
+                //                            .animate({'paddingLeft':'10px'},400)
+                //                            .animate({'paddingLeft':'5px'},400);
               }
               else
               {
                  $(this).removeClass('not_error').addClass('error');
-                 $(this).next('.error-box').html('поле "Email" обязательно для заполнения<br>, поле должно содержать правильный email-адрес<br>')
-                                            .css('color','red')
-                                            .animate({'paddingLeft':'10px'},400)
-                                            .animate({'paddingLeft':'5px'},400);
+                //  $(this).next('.error-box').html('поле "Email" обязательно для заполнения<br>, поле должно содержать правильный email-адрес<br>')
+                                            // .css('color','red')
+                                            // .animate({'paddingLeft':'10px'},400)
+                                            // .animate({'paddingLeft':'5px'},400);
               }
           break;
 
@@ -273,48 +276,48 @@ $(document).ready(function(){
 
 
 
-var currentTab = 0; 
-showTab(currentTab); 
+// var currentTab = 0; 
+// showTab(currentTab); 
 
-function showTab(n) {
-  // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
-//   if (n == 0) {
-    // document.getElementById("prevBtn").style.display = "none";
+// function showTab(n) {
+//   // This function will display the specified tab of the form...
+//   var x = document.getElementsByClassName("tab");
+//   x[n].style.display = "block";
+//   //... and fix the Previous/Next buttons:
+// //   if (n == 0) {
+//     // document.getElementById("prevBtn").style.display = "none";
+// //   } else {
+// //     document.getElementById("prevBtn").style.display = "inline";
+// //   }
+//   if (n == (x.length - 1)) {
+//     document.getElementById("nextBtn").innerHTML = "Submit";
 //   } else {
-//     document.getElementById("prevBtn").style.display = "inline";
+//     document.getElementById("nextBtn").innerHTML = "Next";
 //   }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
 
-  //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
-}
+//   //... and run a function that will display the correct step indicator:
+//   fixStepIndicator(n)
+// }
 
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form...
-  if (currentTab >= x.length) {
-    // ... the form gets submitted:
-    document.getElementById("regForm").submit();
-    document.getElementById("regFormm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
+// function nextPrev(n) {
+//   // This function will figure out which tab to display
+//   var x = document.getElementsByClassName("tab");
+//   // Exit the function if any field in the current tab is invalid:
+//   if (n == 1 && !validateForm()) return false;
+//   // Hide the current tab:
+//   x[currentTab].style.display = "none";
+//   // Increase or decrease the current tab by 1:
+//   currentTab = currentTab + n;
+//   // if you have reached the end of the form...
+//   if (currentTab >= x.length) {
+//     // ... the form gets submitted:
+//     document.getElementById("regForm").submit();
+//     document.getElementById("regFormm").submit();
+//     return false;
+//   }
+//   // Otherwise, display the correct tab:
+//   showTab(currentTab);
+// }
 
 function validateForm() {
   // This function deals with validation of the form fields
