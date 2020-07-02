@@ -48,7 +48,7 @@
 <section class="intro-section-2">
 	<div class="container">
 		<div class="intro-part-2 row">
-			<img src="img/logo.png" alt="logo" class="logo">
+			<img src="img/logo.svg" alt="logo" class="logo">
 			<div class="exclusive-offers-wrapper intro-margin-div none">
 				<div style="margin-right: 10px;"><span class="purple" data-i18n>Exclusive offers for</span> <br> <span class="red" data-i18n>trades in</span> <span class="country-name-custom red"></span></div>
 				<div class="countryflag">
@@ -273,7 +273,7 @@
 		</ul>
 
         <div data-intgrtn-agreements="" data-intgrtn-type="4" class="container"></div>
-		<img src="img/logo.png" class="footer-logo" alt="logo">
+		<img src="img/logo.svg" class="footer-logo" alt="logo">
 	</div>
 </footer>
 
@@ -289,31 +289,18 @@
 
 		<form id="regFormm" action="/action_page.php">
 			<!-- One "tab" for each step in the form: -->
-			<div class="tabb">
-			  <input class="txtf" placeholder="First name" name="fname" id="namee" >
-			  <input class="txtf" placeholder="Last name." name="lname" id="lastnamee" >
-			  <input placeholder="E-mail"  name="email" id="email">
-			  <span class="err">Enter valid mail</span>
-
+			<div class="inpt-box">
+				<input class="txtf " placeholder="First name" name="fname" id="name1" >
+				  <input class="txtf " placeholder="Last name." name="lname" id="lastname1" >
 			</div>
+			  <input required placeholder="E-mail"  name="email" id="email">
+			  <span class="err">enter your valid e-mail account</span>
+			  <input required type="password" name="" class="password" id="newpass" placeholder="Password">
+			  <span class="err">password must be 6-12 characters long</span>
+			  <input required type="tel" class="telephone"  placeholder="" id="telephone">
+			  <span class="err">password must be 6-12 characters long</span>
+			  <button type="button" type="submit" id="submit">GIVE ME ACCESS NOW</button>
 			
-			<div class="tabb">
-			  <input type="password" placeholder="Password" name="" id="newpasss">
-			  <input type="password" placeholder="Confirm password" name="" id="comfirmpasss">
-			  <span class="err">password mismatch</span>
-			</div>
-
-			<div class="tabb field">
-				<input type="tel" class="telephone"  placeholder="" id="telephonee">
-				<span class="err">number must contain no less than 11 characters</span>
-			  </div>
-			
-			<div style="overflow:auto;">
-			  <div>
-				<!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
-				<button type="button" >SUBMIT</button>
-			  </div>
-			</div>
 			
 		  </form>
     </div>
