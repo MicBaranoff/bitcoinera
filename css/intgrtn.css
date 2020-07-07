@@ -1,310 +1,213 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
-p.form-disclaimers {
-  font-size: 11px;
-  margin: 0;
+.top-signup-form-wrapper, .bottom-signup-form-wrapper {
+  min-height: 100%;
+  position: relative;
+  z-index: 10;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-style: solid;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.15);
+  padding: 34px 29px 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.top-signup-form-wrapper:before, .bottom-signup-form-wrapper:before {
+  content: "";
+  background: #d65000;
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 5px;
+}
+.top-signup-form-wrapper .formHeader, .bottom-signup-form-wrapper .formHeader {
+  position: absolute;
+  padding-bottom: 15px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 700;
+  color: #d65000;
+  text-transform: uppercase;
+}
+@media all and (max-width: 768px) {
+  .top-signup-form-wrapper .formHeader, .bottom-signup-form-wrapper .formHeader {
+    position: relative;
+    top: 85px;
+    font-size: 1.2rem;
+  }
+}
+.top-signup-form-wrapper .formHeader span, .bottom-signup-form-wrapper .formHeader span {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #333333;
+  text-transform: none;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  font-size: 1.25em;
+  font-weight: 700;
+  background: #fff;
+  color: #2ba6df;
+  box-shadow: inset 0 0 0 1px #bdbdbd, 0 0 0 4px #fff;
+  margin: 0 30px;
+}
+@media all and (max-width: 768px) {
+  .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item {
+    margin: 0 20px;
+  }
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item.intgrtn-active, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item.intgrtn-active {
+  background: #fff;
+  color: #2ba6df;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input {
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 1em;
+  padding: 10px 12px 10px 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IlZyc3R2YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQwIDQ4MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAgNDgwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0I3RDE2Nzt9LnN0MXtmaWxsOiMyREFBRTE7fTwvc3R5bGU+PHRpdGxlPmZvcm1faWNvbnM8L3RpdGxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yOS42LDI1LjRDMjksMjQuNSwyNywyMy45LDI1LDIzYy0wLjgtMC4zLTEuNy0wLjctMi41LTEuMVYyMGMwLjYtMC42LDEtMS41LDEtMi40YzAuNSwwLjEsMS0wLjcsMS0xLjFzLTAuMS0xLjYtMC42LTEuNWMwLjEtMC43LDAuMi0xLjQsMC4yLTIuMWMtMC4zLTEuOS0yLjEtMy4zLTQtMy4yYy0xLjktMC4xLTMuNywxLjItNCwzLjJjMCwwLjcsMCwxLjQsMC4yLDIuMWMtMC42LTAuMS0wLjcsMS0wLjYsMS41czAuNSwxLjMsMSwxLjFjMCwwLjksMC40LDEuNywxLDIuNHYxLjljLTAuOCwwLjQtMS43LDAuOC0yLjYsMS4xYy0yLDAuOC00LDEuNC00LjYsMi40UzEwLDMwLjMsMTAsMzAuM2gyMEMzMCwzMC4zLDMwLjEsMjYuMiwyOS42LDI1LjR6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTI5LjYsNjUuNEMyOSw2NC40LDI3LDYzLjksMjUsNjNjLTAuOC0wLjMtMS43LTAuNy0yLjUtMS4xVjYwYzAuNi0wLjYsMS0xLjUsMS0yLjRjMC41LDAuMSwxLTAuNywxLTEuMXMtMC4xLTEuNi0wLjYtMS41YzAuMS0wLjcsMC4yLTEuNCwwLjItMi4xYy0wLjMtMS45LTIuMS0zLjMtNC0zLjJjLTEuOS0wLjEtMy43LDEuMi00LDMuMmMwLDAuNywwLDEuNCwwLjIsMi4xYy0wLjYtMC4xLTAuNywxLTAuNiwxLjVzMC41LDEuMywxLDEuMWMwLDAuOSwwLjQsMS43LDEsMi40djEuOWMtMC44LDAuNC0xLjcsMC44LTIuNiwxLjFjLTIsMC44LTQsMS40LTQuNiwyLjNTMTAsNzAuMywxMCw3MC4zaDIwQzMwLDcwLjMsMzAuMSw2Ni4yLDI5LjYsNjUuNHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjAsOTAuMmMtNS40LDAtOS45LDQuNC05LjksOS44YzAsNS40LDQuNCw5LjgsOS45LDkuOHM5LjktNC40LDkuOS05LjhsMCwwQzI5LjgsOTQuNiwyNS40LDkwLjIsMjAsOTAuMnogTTIyLjcsMTA1LjJMMjIuNywxMDUuMmMwLjEsMCwwLjEsMCwwLjEtMC4xYzAsMC4xLDAsMC4yLDAuMSwwLjNjLTAuMS0wLjUsMC40LTAuNiwwLjctMC45YzAuMS0wLjEsMC4zLTAuNSwwLjQtMC41YzAsMC4xLDAsMC4yLDAsMC4zYzAtMC4xLDAsMCwwLDBjMCwwLjEsMCwwLjItMC4xLDAuM2MwLDAsMCwwLDAtMC4xYy0wLjQsMC4zLTAuNCwxLjQtMSwxLjZjLTAuMywwLjEtMC4zLTAuMy0wLjItMC40UzIyLjYsMTA1LjQsMjIuNywxMDUuMkwyMi43LDEwNS4yYy0wLjEsMC0wLjItMC4zLTAuMi0wLjVzMC4yLTAuMSwwLjItMC4xYzAuMS0wLjEsMC4xLTAuMiwwLjItMC4zQzIyLjksMTA0LjUsMjIuNiwxMDUsMjIuNywxMDUuMkwyMi43LDEwNS4yeiBNMjcuMSw5OC44Yy0wLjItMC4zLTAuMy0wLjctMC40LTAuOXMtMC4zLTAuOS0wLjYtMS4xYzAuMSwwLjEsMC4xLDAuMiwwLDAuM2MtMC4yLDAtMC4zLTAuMS0wLjQtMC4zYzAtMC4xLDAuMiwwLjEsMC4xLTAuMWMtMC4zLDAtMC40LTAuMi0wLjYtMC40Yy0wLjQsMC0wLjgsMC4zLTEuMSwwYy0wLjEtMC4xLTAuMi0wLjMtMC4zLTAuMmMtMC4xLDAuMS0wLjIsMC4xLTAuMywwLjFjLTAuNC0wLjEtMC42LTAuNS0xLTAuNWMwLDAuMiwwLjMsMC40LDAuNCwwLjVzMC4zLDAuNSwwLjMsMC4xYzAuMiwwLjEsMC4xLDAuNCwwLjQsMC4zYzAuMywwLjEsMC4yLTAuMywwLjItMC40YzAuMSwwLDAuMSwwLjMsMC4yLDAuM3MwLjMsMC4xLDAuNSwwLjJjMC4yLDAuMiwwLjIsMC40LDAuMiwwLjZjLTAuMSwwLDAsMC4yLTAuMSwwLjNjLTAuMSwwLjEtMC4xLDAuMi0wLjEsMC4zYy0wLjIsMC0wLjQsMC4xLTAuNCwwLjNjLTAuMSwwLjItMS4yLDAuOS0xLjQsMC43Yy0wLjEtMC4zLTAuMy0wLjYtMC40LTAuOWMtMC4zLTAuMi0wLjYtMC41LTAuNy0wLjhjMC4xLTAuNC0wLjktMS4xLTEuMS0xLjFjMC4xLDAuNSwwLjUsMC44LDAuOCwxLjJzMC41LDEuMSwwLjcsMS4yYzAuNCwwLDAuNywwLjcsMC45LDAuOXMwLjktMC41LDEuMi0wLjRjMC4xLDAuMywwLDAuNiwwLDAuOWMtMC4yLDAuNy0wLjYsMS4zLTEuMSwxLjhjLTAuMiwwLjMtMC41LDAuNi0wLjcsMWMtMC4yLDAuMywwLjMsMSwwLjIsMS4yYzAuMSwwLjQtMC4xLDAuOS0wLjUsMS4xYy0wLjMsMC4yLTAuNiwwLjQtMC41LDAuOHMtMC4zLDAuNC0wLjQsMC42Yy0wLjEsMC4zLTAuMywwLjUtMC42LDAuN0gyMGMtMC4zLDAtMC42LDAtMC45LTAuMWMtMC40LTAuNS0wLjgtMS0xLjEtMS40Yy0wLjItMC4zLTAuNi0wLjgtMC4yLTEuMWMwLTAuNC0wLjItMC43LTAuNC0xYy0wLjItMC4zLTEuMi0xLjEtMC44LTEuNWMwLTAuMy0wLjItMC41LTAuMi0wLjdjLTAuMi0wLjItMC40LDAuMi0wLjYtMC4xcy0wLjYtMC4zLTAuOSwwYy0wLjMsMC4xLTAuNywwLjEtMSwwLjFjLTAuNi0wLjYtMC45LTEuNC0wLjctMi4zYzAuMS0wLjMsMC4xLTAuOSwwLjQtMS4yYzAuMS0wLjMsMC41LTAuNywwLjctMXMwLjMtMC4yLDAuNC0wLjNjMC4yLTAuMywwLjMtMC41LDAuNi0wLjdjMC4zLTAuMiwwLjgtMC42LDAuMy0wLjZjMC4yLTAuMywwLjQtMC42LDAuNi0wLjljMC4yLTAuMSwwLjUtMC4xLDAuNi0wLjJjMC4yLTAuMywwLjItMC4zLDAuMi0wLjVzMC41LTAuMiwwLjUtMC4zYzAuMi0wLjEsMC4zLTAuMiwwLjUtMC4zYzMuOC0xLjEsNy44LDEuMSw4LjksNC45QzI3LDk4LjIsMjcuMSw5OC41LDI3LjEsOTguOEwyNy4xLDk4Ljh6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTIwLjIsOTRjMCwwLjEsMC41LDAuMSwwLjUsMC4xYy0wLjEsMCwwLDAsMCwwYzAuNC0wLjMtMC45LTAuNS0wLjktMC41YzAsMCwwLjEsMCwwLjEtMC4xYy0wLjIsMC4xLTAuMS0wLjItMC4zLDAuMWMwLjEsMC4yLTAuMiwwLjMtMC4xLDAuNVMyMCw5NC4xLDIwLjIsOTR6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTE4LjUsOTQuNWMtMC4yLTAuMS0wLjEsMC4xLTAuMiwwLjJzLTAuMiwwLjMtMC41LDAuMmMwLTAuMywwLjYsMCwwLjMtMC41Yy0wLjEtMC4yLTAuMy0wLjUtMC41LTAuM3MtMC43LDAuMy0wLjksMC42Yy0wLjEsMC4xLTAuOSwwLjctMC45LDAuOGMwLjMsMC4yLDEuNS0wLjcsMS44LTAuNGMwLDAuMi0wLjMsMC4zLTAuMywwLjZjMC4xLDAsMC4xLDAuMSwwLjIsMC4xYzAuNC0wLjEsMC4zLDAuMiwwLjYsMC4zYzAuNSwwLjEsMC4xLDAsMC40LTAuM2MwLjEtMC4xLDAuNi0wLjEsMC43LDAuMWMwLTAuMSwwLjIsMCwwLDBjMC4yLDAsMC41LDAuMiwwLjYsMGMwLjEtMC4xLDAuMi0wLjEsMC4zLDBjMCwwLDAsMCwwLDBjMC40LDAuMywwLjMtMC45LDAuMy0xYy0wLjEsMC4xLTEsMC4yLTEsMC4xcy0wLjEtMC4xLTAuMi0wLjJjMC4yLTAuMi0wLjEtMC4xLDAtMC4zYy0wLjEsMC0wLjIsMC0wLjMsMGMwLDAuMSwwLjEsMC4xLTAuMSwwLjFjLTAuMSwwLjIsMC4xLDAuMywwLjEsMC40YzAsMC0wLjEsMC0wLjEsMGMwLDAuMSwwLDAuMSwwLDAuMmMtMC4zLTAuMS0wLjEtMC4zLTAuNC0wLjZjMC4yLTAuMi0wLjUtMC41LTAuNC0wLjdDMTcuOCw5My45LDE4LjcsOTQuNCwxOC41LDk0LjV6IE0xNy42LDk0LjdjMCwwLTAuMSwwLTAuMSwwYzAtMC4xLDAuMi0wLjYsMC4zLTAuNkMxNy44LDk0LjMsMTcuNiw5NC42LDE3LjYsOTQuN0wxNy42LDk0Ljd6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTE3LjYsOTQuN0MxNy42LDk0LjYsMTcuNSw5NC43LDE3LjYsOTQuN3oiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjEuOCw5NC4yYy0wLjEsMCwwLDAuNCwwLjIsMC40YzAuMSwwLjEsMC4zLDAuMSwwLjQsMC4xYzAtMC4zLTAuOC0wLjktMS0xYzAsMCwwLTAuMSwwLjEtMC4xYy0wLjEtMC4zLTAuNC0wLjEtMC40LDAuMVMyMS44LDk0LDIxLjgsOTQuMnoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjIsOTQuNkMyMS45LDk0LjYsMjIuMSw5NC43LDIyLDk0LjZ6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTIyLjQsOTMuN2MtMC4xLDAtMC4zLTAuMy0wLjQtMC4zczAsMC4xLDAsMC4xczAuMSwwLjEsMCwwQzIyLjEsOTMuNSwyMi4zLDkzLjgsMjIuNCw5My43eiIvPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNyw5NC4xYzAsMC0wLjEsMC4xLTAuMSwwLjFsMCwwQzE2LjksOTQuMiwxNyw5NC4xLDE3LDk0LjF6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTI0LjYsMTMyLjFIMTh2LTEuM2MwLTAuNy0wLjYtMS4zLTEuMy0xLjNjLTAuNywwLTEuMywwLjYtMS4zLDEuM3YxLjNjLTEuNSwwLTIuNiwxLjItMi42LDIuNmwwLDB2MTMuMWMwLDEuNSwxLjIsMi42LDIuNiwyLjZjMCwwLDAsMCwwLDBoOS4yYzEuNSwwLDIuNi0xLjIsMi42LTIuNmwwLDB2LTEzLjFDMjcuMiwxMzMuMywyNiwxMzIuMSwyNC42LDEzMi4xeiBNMTYuNywxNDcuOWgtMS4zdi0xLjNoMS4zTDE2LjcsMTQ3Ljl6IE0xNi43LDE0NS4yaC0xLjN2LTEuM2gxLjNMMTYuNywxNDUuMnogTTE2LjcsMTQyLjZoLTEuM3YtMS4zaDEuM0wxNi43LDE0Mi42eiBNMTkuNCwxNDcuOUgxOHYtMS4zaDEuM0wxOS40LDE0Ny45eiBNMTkuNCwxNDUuMkgxOHYtMS4zaDEuM0wxOS40LDE0NS4yeiBNMTkuNCwxNDIuNkgxOHYtMS4zaDEuM0wxOS40LDE0Mi42eiBNMjIsMTQ3LjloLTEuM3YtMS4zSDIyVjE0Ny45eiBNMjIsMTQ1LjNoLTEuM3YtMS4zSDIyVjE0NS4zeiBNMjIsMTQyLjZoLTEuM3YtMS4zSDIyVjE0Mi42eiBNMjQuNiwxNDcuOWgtMS40di0xLjNoMS4zTDI0LjYsMTQ3Ljl6IE0yNC42LDE0NS4yaC0xLjR2LTEuM2gxLjNMMjQuNiwxNDUuMnogTTI0LjYsMTQyLjZoLTEuNHYtMS4zaDEuM0wyNC42LDE0Mi42eiBNMjQuNiwxNDBoLTkuMnYtNS4zaDkuMkwyNC42LDE0MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjAsMTgxLjdsOC45LTcuOWMtMC4xLDAtMC4xLDAtMC4yLDBIMTEuM2gtMC4xTDIwLDE4MS43eiIvPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMCwxNzVjMC0wLjEsMC0wLjMtMC4xLTAuNGwtNi4zLDUuNmw2LjIsNS40YzAuMS0wLjIsMC4yLTAuNCwwLjItMC42VjE3NXoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTAuMSwxNzQuNWMtMC4xLDAuMi0wLjEsMC4zLTAuMSwwLjV2MTBjMCwwLjIsMCwwLjMsMC4xLDAuNWw2LjMtNS40TDEwLjEsMTc0LjV6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTIyLjcsMTgxbC0yLjcsMi4zbC0yLjctMi4zbC02LjEsNS4zaDE3LjVMMjIuNywxODF6Ii8+PHBhdGggY2xhc3M9InN0MCIgZD0iTTI1LjksMjE3Ljl2LTEuOGMwLTMuMy0yLjYtNS45LTUuOS01LjlzLTUuOSwyLjYtNS45LDUuOXYxLjhoLTEuM3YxMS44aDE0LjR2LTExLjhIMjUuOXogTTIwLjksMjI3LjFoLTIuMmwwLjUtM2MtMC4zLTAuMi0wLjUtMC41LTAuNS0wLjljMC0wLjYsMC41LTEuMSwxLjEtMS4xczEuMSwwLjUsMS4xLDEuMWwwLDBjMCwwLjQtMC4yLDAuNy0wLjUsMC45TDIwLjksMjI3LjF6IE0yMy4zLDIxNy45aC02LjZ2LTEuOGMwLjEtMS44LDEuNy0zLjIsMy41LTMuMWMxLjcsMC4xLDMsMS40LDMuMSwzLjFMMjMuMywyMTcuOXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjkuNiwyNjUuNGMtMC42LTAuOS0yLjYtMS41LTQuNi0yLjRjLTAuOC0wLjMtMS43LTAuNy0yLjUtMS4xVjI2MGMwLjYtMC42LDEtMS41LDEtMi40YzAuNSwwLjEsMS0wLjcsMS0xLjFzLTAuMS0xLjYtMC42LTEuNWMwLjEtMC43LDAuMi0xLjQsMC4yLTIuMWMtMC4zLTEuOS0yLjEtMy4zLTQtMy4yYy0xLjktMC4xLTMuNywxLjItNCwzLjJjMCwwLjcsMCwxLjQsMC4yLDIuMWMtMC42LTAuMS0wLjcsMS4xLTAuNiwxLjVzMC41LDEuMywxLDEuMWMwLDAuOSwwLjQsMS43LDEsMi40djEuOWMtMC44LDAuNC0xLjcsMC44LTIuNiwxLjFjLTIsMC44LTQsMS40LTQuNiwyLjRzLTAuNCw0LjktMC40LDQuOWgyMEMzMCwyNzAuMiwzMC4xLDI2Ni4yLDI5LjYsMjY1LjR6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTI5LjYsMzA1LjRjLTAuNi0wLjktMi42LTEuNS00LjYtMi40Yy0wLjgtMC4zLTEuNy0wLjctMi41LTEuMVYzMDBjMC42LTAuNiwxLTEuNSwxLTIuNGMwLjUsMC4xLDEtMC43LDEtMS4xcy0wLjEtMS42LTAuNi0xLjVjMC4xLTAuNywwLjItMS40LDAuMi0yLjFjLTAuMy0xLjktMi4xLTMuMy00LTMuMmMtMS45LTAuMS0zLjcsMS4yLTQsMy4yYzAsMC43LDAsMS40LDAuMiwyLjFjLTAuNi0wLjEtMC43LDEtMC42LDEuNXMwLjUsMS4zLDEsMS4xYzAsMC45LDAuNCwxLjcsMSwyLjR2MS45Yy0wLjgsMC40LTEuNywwLjgtMi42LDEuMWMtMiwwLjgtNCwxLjQtNC42LDIuNHMtMC40LDQuOS0wLjQsNC45aDIwQzMwLDMxMC4yLDMwLjEsMzA2LjIsMjkuNiwzMDUuNHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjAsMzMwLjFjLTUuNCwwLTkuOSw0LjQtOS45LDkuOXM0LjQsOS45LDkuOSw5LjlzOS44LTQuNCw5LjktOS45UzI1LjQsMzMwLjEsMjAsMzMwLjFDMjAsMzMwLjEsMjAsMzMwLjEsMjAsMzMwLjF6IE0yMi43LDM0NS4xTDIyLjcsMzQ1LjFjMC4xLDAsMC4xLDAsMC4xLTAuMWMwLDAuMSwwLDAuMiwwLjEsMC4zYy0wLjEtMC41LDAuNC0wLjYsMC43LTAuOWMwLjEtMC4xLDAuMy0wLjUsMC40LTAuNWMwLDAuMSwwLDAuMiwwLDAuM2MwLTAuMSwwLDAsMCwwYzAsMC4xLDAsMC4yLTAuMSwwLjNjMCwwLDAsMCwwLTAuMWMtMC40LDAuNC0wLjQsMS40LTEsMS42Yy0wLjMsMC4xLTAuMy0wLjMtMC4yLTAuNVMyMi42LDM0NS40LDIyLjcsMzQ1LjFMMjIuNywzNDUuMWMtMC4xLDAtMC4yLTAuMy0wLjItMC41czAuMi0wLjEsMC4yLDBjMC4xLTAuMSwwLjEtMC4yLDAuMi0wLjNDMjIuOSwzNDQuNSwyMi42LDM0NSwyMi43LDM0NS4xTDIyLjcsMzQ1LjF6IE0yNy4xLDMzOC45Yy0wLjItMC4zLTAuMy0wLjctMC40LTAuOXMtMC4zLTAuOS0wLjYtMS4xYzAuMSwwLjEsMC4xLDAuMiwwLDAuM2MtMC4yLDAtMC4zLTAuMS0wLjQtMC4zYzAtMC4xLDAuMiwwLjEsMC4xLTAuMWMtMC4zLDAtMC40LTAuMi0wLjYtMC40Yy0wLjQsMC0wLjgsMC4zLTEuMSwwYy0wLjEsMC0wLjItMC40LTAuMy0wLjJjLTAuMSwwLjEtMC4yLDAuMS0wLjMsMC4xYy0wLjQtMC4xLTAuNi0wLjUtMS0wLjVjMCwwLjIsMC4zLDAuNCwwLjQsMC41czAuMywwLjUsMC4zLDAuMWMwLjIsMC4xLDAuMSwwLjQsMC40LDAuM2MwLjMsMC4xLDAuMi0wLjMsMC4yLTAuNGMwLjEsMCwwLjEsMC4zLDAuMiwwLjNzMC4zLDAuMSwwLjUsMC4yYzAuMiwwLjIsMC4yLDAuNCwwLjIsMC42Yy0wLjEsMCwwLDAuMi0wLjEsMC4zYy0wLjEsMC4xLTAuMSwwLjItMC4xLDAuNGMtMC4yLDAtMC40LDAuMS0wLjQsMC40Yy0wLjEsMC4xLTEuMiwwLjktMS40LDAuN2MtMC4xLTAuMy0wLjMtMC42LTAuNC0wLjljLTAuMy0wLjItMC42LTAuNS0wLjctMC44YzAuMS0wLjQtMC45LTEuMS0xLjEtMS4xYzAuMSwwLjUsMC41LDAuOCwwLjgsMS4xczAuNSwxLjEsMC43LDEuMmMwLjQsMCwwLjcsMC43LDAuOSwwLjlzMC45LTAuNSwxLjItMC40YzAuMSwwLjMsMCwwLjYsMCwwLjhjLTAuMiwwLjctMC42LDEuMy0xLjEsMS44Yy0wLjIsMC4zLTAuNSwwLjYtMC43LDFjLTAuMiwwLjMsMC4zLDEsMC4yLDEuMmMwLjEsMC40LTAuMSwwLjktMC41LDEuMWMtMC4zLDAuMi0wLjYsMC40LTAuNSwwLjhzLTAuMywwLjQtMC40LDAuNmMtMC4xLDAuMy0wLjMsMC41LTAuNiwwLjZIMjBjLTAuMywwLTAuNiwwLTAuOSwwYy0wLjQtMC41LTAuOC0xLTEuMS0xLjRjLTAuMi0wLjMtMC42LTAuOC0wLjItMS4xYzAtMC40LTAuMi0wLjctMC40LTFjLTAuMi0wLjQtMS4yLTEuMS0wLjgtMS41YzAtMC4zLTAuMi0wLjUtMC4yLTAuN2MtMC4yLTAuMi0wLjQsMC4yLTAuNi0wLjFzLTAuNi0wLjMtMC45LDBjLTAuMywwLjEtMC43LDAuMS0xLDAuMWMtMC42LTAuNi0wLjktMS41LTAuNi0yLjNjMC4xLTAuMywwLjEtMC45LDAuNC0xLjFjMC4xLTAuNCwwLjUtMC43LDAuNy0xczAuMy0wLjIsMC40LTAuM2MwLjItMC4zLDAuMy0wLjUsMC42LTAuN2MwLjMtMC4yLDAuOC0wLjYsMC4zLTAuNmMwLjItMC4zLDAuNC0wLjYsMC42LTAuOWMwLjItMC4xLDAuNS0wLjEsMC42LTAuMmMwLjItMC4zLDAuMi0wLjMsMC4yLTAuNXMwLjUtMC4yLDAuNS0wLjNjMC4yLTAuMSwwLjMtMC4yLDAuNS0wLjNjMy44LTEuMSw3LjgsMS4xLDguOSw0LjljMC4xLDAuMywwLjEsMC42LDAuMiwwLjhMMjcuMSwzMzguOXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjAuMiwzMzRjMCwwLjEsMC41LDAuMSwwLjUsMC4xYy0wLjEsMCwwLDAsMCwwYzAuNC0wLjMtMC45LTAuNS0wLjktMC41YzAsMCwwLjEsMCwwLjEtMC4xYy0wLjIsMC4xLTAuMS0wLjItMC4zLDAuMWMwLjEsMC4yLTAuMiwwLjMtMC4xLDAuNVMyMCwzMzQuMSwyMC4yLDMzNHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTguNSwzMzQuNWMtMC4yLTAuMS0wLjEsMC0wLjIsMC4ycy0wLjIsMC4zLTAuNSwwLjJjMC0wLjMsMC42LDAsMC4zLTAuNWMtMC4xLTAuMi0wLjMtMC41LTAuNS0wLjNzLTAuNywwLjMtMC45LDAuNmMtMC4xLDAuMS0wLjksMC43LTAuOSwwLjhjMC4zLDAuMiwxLjUtMC43LDEuOC0wLjRjMCwwLjItMC4zLDAuNC0wLjMsMC41YzAuMSwwLDAuMSwwLjEsMC4yLDAuMWMwLjQtMC4xLDAuMywwLjIsMC42LDAuM2MwLjUsMC4xLDAuMSwwLDAuNC0wLjNjMC4xLTAuMSwwLjYtMC4xLDAuNywwLjFjMC0wLjEsMC4yLDAsMCwwYzAuMiwwLDAuNSwwLjIsMC42LDBjMC4xLTAuMSwwLjItMC4xLDAuMywwYzAsMCwwLDAsMCwwYzAuNCwwLjMsMC4zLTAuOSwwLjMtMWMtMC4xLDAuMS0xLDAuMi0xLDAuMXMtMC4xLTAuMS0wLjItMC4yYzAuMi0wLjItMC4xLTAuMSwwLTAuM2MtMC4xLDAtMC4yLDAtMC4zLDBjMCwwLjEsMC4xLDAuMS0wLjEsMGMtMC4xLDAuMiwwLjEsMC4zLDAuMSwwLjRjMCwwLTAuMSwwLTAuMSwwYzAsMC4xLDAsMC4xLDAsMC4yYy0wLjMsMC0wLjEtMC4zLTAuNC0wLjZjMC4yLTAuMi0wLjUtMC41LTAuNC0wLjZDMTcuOCwzMzMuOSwxOC43LDMzNC40LDE4LjUsMzM0LjV6IE0xNy42LDMzNC43YzAsMC0wLjEsMC0wLjEsMGMwLTAuMSwwLjItMC42LDAuMy0wLjZDMTcuOCwzMzQuMywxNy42LDMzNC41LDE3LjYsMzM0LjdMMTcuNiwzMzQuN3oiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTcuNiwzMzQuN0MxNy42LDMzNC42LDE3LjUsMzM0LjcsMTcuNiwzMzQuN3oiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjEuOCwzMzQuMmMtMC4xLDAsMCwwLjQsMC4yLDAuNGMwLjEsMC4xLDAuMywwLjEsMC40LDAuMWMwLTAuMy0wLjgtMC45LTEtMWMwLDAsMC0wLjEsMC4xLTAuMWMtMC4xLTAuMy0wLjQtMC4xLTAuNCwwLjFTMjEuOCwzMzQsMjEuOCwzMzQuMnoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjIsMzM0LjVDMjEuOSwzMzQuNSwyMi4xLDMzNC42LDIyLDMzNC41eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yMi40LDMzMy42Yy0wLjEsMC0wLjMtMC4zLTAuNC0wLjNzMCwwLjEsMCwwLjFzMC4xLDAuMSwwLDBDMjIuMSwzMzMuNSwyMi4zLDMzMy44LDIyLjQsMzMzLjZ6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTE3LDMzNC4xYzAsMC0wLjEsMC4xLTAuMSwwLjFsMCwwQzE2LjksMzM0LjIsMTcsMzM0LjEsMTcsMzM0LjF6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTI0LjYsMzcyLjFIMTh2LTEuM2MwLTAuNy0wLjYtMS4zLTEuMy0xLjNjLTAuNywwLTEuMywwLjYtMS4zLDEuM3YxLjNjLTEuNSwwLTIuNiwxLjItMi42LDIuNmwwLDB2MTMuMWMwLDEuNSwxLjIsMi42LDIuNiwyLjZjMCwwLDAsMCwwLDBoOS4yYzEuNSwwLDIuNi0xLjIsMi42LTIuNmwwLDB2LTEzLjFDMjcuMiwzNzMuMywyNiwzNzIuMSwyNC42LDM3Mi4xeiBNMTYuNywzODcuOWgtMS4zdi0xLjNoMS4zTDE2LjcsMzg3Ljl6IE0xNi43LDM4NS4zaC0xLjN2LTEuM2gxLjNMMTYuNywzODUuM3ogTTE2LjcsMzgyLjZoLTEuM3YtMS4zaDEuM0wxNi43LDM4Mi42eiBNMTkuNCwzODcuOUgxOHYtMS4zaDEuM0wxOS40LDM4Ny45eiBNMTkuNCwzODUuMkgxOHYtMS4zaDEuM0wxOS40LDM4NS4yeiBNMTkuNCwzODIuNkgxOHYtMS4zaDEuM0wxOS40LDM4Mi42eiBNMjIsMzg3LjloLTEuM3YtMS4zSDIyVjM4Ny45eiBNMjIsMzg1LjNoLTEuM3YtMS4zSDIyVjM4NS4zeiBNMjIsMzgyLjZoLTEuM3YtMS4zSDIyVjM4Mi42eiBNMjQuNiwzODcuOWgtMS40di0xLjNoMS4zTDI0LjYsMzg3Ljl6IE0yNC42LDM4NS4yaC0xLjR2LTEuM2gxLjNMMjQuNiwzODUuMnogTTI0LjYsMzgyLjZoLTEuNHYtMS4zaDEuM0wyNC42LDM4Mi42eiBNMjQuNiwzODBoLTkuMnYtNS4zaDkuMkwyNC42LDM4MHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjAsNDIxLjdsOC45LTcuOWMtMC4xLDAtMC4xLDAtMC4yLDBIMTEuM2gtMC4xTDIwLDQyMS43eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0zMCw0MTVjMC0wLjEsMC0wLjMtMC4xLTAuNGwtNi4zLDUuNmw2LjIsNS40YzAuMS0wLjIsMC4yLTAuNCwwLjItMC42VjQxNXoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTAuMSw0MTQuNWMtMC4xLDAuMi0wLjEsMC4zLTAuMSwwLjV2MTBjMCwwLjIsMCwwLjMsMC4xLDAuNWw2LjMtNS40TDEwLjEsNDE0LjV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTIyLjcsNDIxbC0yLjcsMi4zbC0yLjctMi4zbC02LjEsNS4zaDE3LjVMMjIuNyw0MjF6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTI1LjksNDU3Ljl2LTEuOGMwLTMuMy0yLjYtNS45LTUuOS01LjlzLTUuOSwyLjYtNS45LDUuOXYxLjhoLTEuM3YxMS44aDE0LjR2LTExLjhIMjUuOXogTTIwLjksNDY3LjFoLTIuMmwwLjUtM2MtMC4zLTAuMi0wLjUtMC41LTAuNS0wLjljMC0wLjYsMC41LTEuMSwxLjEtMS4xczEuMSwwLjUsMS4xLDEuMWwwLDBjMCwwLjQtMC4yLDAuNy0wLjUsMC45TDIwLjksNDY3LjF6IE0yMy4zLDQ1Ny45aC02LjZ2LTEuOGMwLjEtMS44LDEuNy0zLjIsMy41LTMuMWMxLjcsMC4xLDMsMS40LDMuMSwzLjFMMjMuMyw0NTcuOXoiLz48L3N2Zz4=);
+  background-size: 40px 480px;
+  background-repeat: no-repeat;
+  transition: background-color 0.1s linear, border 50ms linear;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.05);
+  min-height: 35px;
+}
+@media all and (max-width: 768px) {
+  .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input {
+    font-size: 0.9em;
+  }
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-first-name .intgrtn-input, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-last-name .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-first-name .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-last-name .intgrtn-input {
+  background-position: 0 0;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-first-name .intgrtn-input:focus, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-last-name .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-first-name .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-last-name .intgrtn-input:focus {
+  background-position: 0 -240px;
+  border-color: #2ba6df !important;
+  background-color: #f2fafd;
+  box-shadow: none;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-email .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-email .intgrtn-input {
+  background-position: 0 -160px;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-email .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-email .intgrtn-input:focus {
+  background-position: 0 -400px;
+  border-color: #2ba6df !important;
+  background-color: #f2fafd;
+  box-shadow: none;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password .intgrtn-input, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password-confirm .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password-confirm .intgrtn-input {
+  background-position: 0 -200px;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password .intgrtn-input:focus, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password-confirm .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-password-confirm .intgrtn-input:focus {
+  background-position: 0 -440px;
+  border-color: #2ba6df !important;
+  background-color: #f2fafd;
+  box-shadow: none;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-input, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-input {
+  background-position: 0 -120px;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-input:focus, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-input:focus {
+  background-position: 0 -360px;
+  border-color: #2ba6df !important;
+  background-color: #f2fafd;
+  box-shadow: none;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-area-flags-holder, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-input-holder.intgrtn-input-holder-phone .intgrtn-area-flags-holder {
+  background-image: none;
+  padding-left: 10px;
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit {
+  font-size: 2em;
+  cursor: pointer;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  background-color: #2ba6df;
+  border-color: #2ba6df;
+  box-shadow: 0 2px 0 #1978a5;
+  text-transform: uppercase;
+  white-space: normal;
+}
+@media all and (max-width: 768px) {
+  .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 480px) {
+  .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit {
+    min-height: 70px;
+    line-height: 1.2;
+    height: auto;
+  }
+}
+.top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step:hover, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit:hover, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step:hover, .top-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit:hover, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step:hover, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit:hover, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step:hover, .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit:hover {
+  background-color: #57b9e6;
+  border-color: #57b9e6;
 }
 
-.formwrap-outer .intgrtn-form-signup {
-  padding: 15px;
+@media screen and (max-width: 767px) {
+  body h1 {
+    font-size: 1.55em;
+  }
 }
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-steps-navigation {
+body .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-go-to-step, body .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step-holder .intgrtn-btn-submit, body .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-go-to-step, body .bottom-signup-form-wrapper .intgrtn-form-signup-3-steps .intgrtn-btn-submit-holder .intgrtn-btn-submit {
+  font-size: 1.2em;
+}
+body .intgrtn-cookie-popup {
+  z-index: 10000;
+}
+body .intgrtn-cookie-popup a .intgrtn-cookie-popup-link-privacy-policy {
+  text-decoration: underline;
+}
+
+.gdpr-disclaimer {
   display: flex;
 }
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item {
-  display: inline-block;
-  background-color: #fff28a;
-  color: white;
-  font-size: 2em;
-  line-height: 1.1em;
-  font-weight: bold;
-  height: 7px;
-  width: 33%;
-  margin-right: 2px;
-  border-radius: 0;
-  text-indent: 100%;
-  overflow: hidden;
+.gdpr-disclaimer .gdpr-locked-icon {
+  height: 15px;
+  margin-right: 20px;
 }
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item.intgrtn-active {
-  background-color: #fd57a5;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-steps-navigation .intgrtn-steps-navigation-item:after {
-  content: "";
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input {
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input-message-error-verbose {
-  margin: 10px 0;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input-message-error-verbose .intgrtn-single-message {
-  font-size: 0.8em !important;
-  margin-bottom: 10px;
-  line-height: 1 !important;
-  transition: all 0.3s ease-out !important;
-  text-align: left !important;
-  padding-left: 5px;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-input-holder .intgrtn-input-message-error-verbose .intgrtn-single-message.intgrtn-untouched {
+.gdpr-disclaimer .gdpr-disclaimer-text {
   color: #000;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-btn-go-to-step, .formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps .intgrtn-btn-submit {
-  margin: 0 auto;
-  display: block;
-  font-size: 20px;
-  font-weight: bold;
-  position: relative;
-  color: #ffffff;
-  padding: 0;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  background-image: linear-gradient(166deg, #156cff 1%, #0e49ff);
-  box-shadow: 0px 4px 20.9px 3.1px rgba(13, 13, 13, 0.43);
-  text-transform: uppercase;
-  width: 90%;
-  height: 64px;
-  cursor: pointer;
-  white-space: normal;
-  text-align: center;
-}
-.formwrap-outer .intgrtn-form-signup .intgrtn-form-signup-3-steps [data-intgrtn-message-id=passwordConfirmMatch] {
-  display: none;
+  font-size: 12px;
 }
 
-.list-pwd-tips {
-  padding-left: 5px;
-  list-style-type: none;
-}
-.list-pwd-tips li {
-  position: relative;
-  font-size: 0.8em !important;
-  margin-bottom: 10px;
-  line-height: 1 !important;
-  transition: all 0.3s ease-out !important;
-  text-align: left !important;
-  padding-left: 5px;
-}
-.list-pwd-tips li:before {
-  position: absolute;
-  display: block;
-  content: " ";
-  width: 5px;
-  height: 5px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-color: #000;
-  top: 3px;
-  right: 100%;
-}
-.list-pwd-tips li.passing:before {
-  background-color: green !important;
-}
-.list-pwd-tips .text-red {
-  color: #000;
-}
-.list-pwd-tips.touched li:before {
-  background-color: red;
-}
-.list-pwd-tips.touched .text-red {
-  color: red;
-}
-.list-pwd-tips.touched .text-green {
-  color: green;
-}
-
-.js-pwd-tooltip-icon {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  cursor: pointer;
-}
-
-.error-message {
-  margin-top: 30px !important;
-  text-align: center !important;
-  padding-bottom: 10px !important;
-  color: red;
-}
-
-.progress {
-  width: 100%;
-  height: 45px;
-}
-
-.modal-signup {
-  max-width: 800px;
-  max-height: 650px;
-  background-color: #fff;
-  font-size: 14px;
-  margin: auto;
-  padding: 20px 30px !important;
-  text-align: center;
-  z-index: 10001;
-}
 @media all and (max-width: 768px) {
-  .modal-signup {
-    max-height: 550px;
-  }
-}
-.modal-signup main {
-  padding: 20px 0;
-}
-@media all and (max-width: 768px) {
-  .modal-signup main {
-    padding: unset;
-  }
-}
-.modal-signup main .broker-info {
-  padding: 0 20px;
-  text-align: center;
-  width: 100%;
-}
-@media all and (max-width: 768px) {
-  .modal-signup main .broker-info .modal-logo {
-    padding: 20px;
-  }
-}
-.modal-signup main .logo {
-  height: 200px;
-  padding-top: 50px;
-}
-@media all and (max-width: 768px) {
-  .modal-signup main .logo {
-    padding-top: 40px;
-  }
-}
-.modal-signup main .logo img {
-  vertical-align: middle;
-  max-width: 300px;
-}
-.modal-signup main .broker-advantages {
-  padding-top: 20px;
-}
-.modal-signup main .broker-advantages .item {
-  text-align: left;
-}
-.modal-signup main .broker-advantages .item .icon {
-  display: inline-block;
-}
-@media all and (max-width: 768px) {
-  .modal-signup main .broker-advantages .item .icon {
-    width: 100%;
-    text-align: center;
-  }
-}
-.modal-signup main .broker-advantages .item .icon img {
-  width: 50px;
-}
-.modal-signup main .broker-advantages .item .text {
-  display: inline-block;
-  text-align: left;
-}
-@media all and (max-width: 768px) {
-  .modal-signup main .broker-advantages .item .text {
-    text-align: center;
-  }
-}
-.modal-signup .modal-button-hide-mobile {
-  display: block;
-}
-@media all and (max-width: 768px) {
-  .modal-signup .modal-button-hide-mobile {
+  .sm-hidden {
     display: none;
   }
 }
-.modal-signup .modal-button-show-mobile {
+
+.sm-show {
   display: none;
 }
 @media all and (max-width: 768px) {
-  .modal-signup .modal-button-show-mobile {
+  .sm-show {
     display: block;
   }
-}
-.modal-signup .start-trading-button {
-  background-color: #18a7f8;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1em;
-  padding: 10px;
-  width: 500px;
-  max-width: 100%;
-  border: 0;
-  outline: 0;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.text-green {
-  color: green;
-  display: block;
-  margin-top: 5px;
-}
-
-.register-form-tab .tooltip.in .tooltip-inner {
-  margin-left: -7px;
-  padding: 4px;
-}
-
-.btn-start {
-  font-family: "Oswald", sans-serif;
-  font-size: 40px;
-  color: #ffffff;
-  text-shadow: 0.5px 0.866px 0px rgba(1, 198, 0, 0.35);
-  border-radius: 10px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0be00b+0,01c601+100 */
-  background: #ffaf38;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #a110cb 0%, #740d92 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a110cb", endColorstr="#740d92", GradientType=0);
-  /* IE6-9 */
-}
-.btn-start:hover, .btn-start:focus {
-  color: #ffffff;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01c601+0,0be00b+100 */
-  background: #ff9b33;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #740d92 0%, #a110cb 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#740d92", endColorstr="#a110cb", GradientType=0);
-  /* IE6-9 */
-}
-
-.hidden {
-  display: none !important;
-}
-
-@media all and (max-width: 768px) {
-  .footer-ul {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    justify-content: center;
-  }
-  .footer-ul li {
-    margin-right: 15px;
-  }
-}
-body .seenon-p {
-  pointer-events: none;
-}
-body .fake-news-logos-wrapper {
 }
 
 /*# sourceMappingURL=intgrtn.css.map */

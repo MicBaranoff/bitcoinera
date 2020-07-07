@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bitcoin Profit</title>
+    <base href="/bitcoinprofit/">
+
+    <meta name="description">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="..\css\videoOverlay.css?v=_dhRlhJIbiFrIX2pve03mzJCiUDjXkNOIkkK__Hwxa0" rel="stylesheet" type="text/css">
+    <link href="..\css\step1.css?v=D7cgABEeRYMhu3EoSKoexcyz8I5vX2lSKKPgp7Z6ZB4" rel="stylesheet" type="text/css">
+    <link href="..\css\step1_en.css?v=V2MkNQvpV7sgQAZJdxf-VqI1yHyMaYTXstgoYNNgHlo" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <meta name="“theme-color”" content="“#ffffff”">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#d65000">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="..\css\form.css?v=Y7lUBGg21U_Tc3RdtT0uhQFOgCYpdRGTp2MXWuSFNgQ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.css">
+    <link rel="stylesheet" href="..\css\random_user_popup.css?v=7sMi2zObXBZrNDtasJ1NK24knm-aGzq2HX2PeCUJXTU" type="text/css"><!-- BEGIN intgrtn -->
+<script>
+	window.intgrtnInit = function () {
+		var path = "/";
+		if (window.location.pathname.split("/")[1]) {
+			path = "/" + window.location.pathname.split("/")[1] + "/";
+		}
+		window.intgrtn.setOptions({
+			server: {
+				// endpoint: "/intgrtn",
+				// ignoreProjectEndpoint: true
+			},
+			cookies: {
+				path: path
+			},
+		});
+		window.intgrtn.events.on("form.signup.step.changed", function (element) {
+			if (element.step == 2) {
+				window.intgrtn.elements.find(".intgrtn-steps-navigation-item-1", element.form).forEach(function (element) {
+					$(element).html('<span>&#10003;</span>');
+				});
+
+			}
+			if (element.step == 3) {
+				window.intgrtn.elements.find(".intgrtn-steps-navigation-item-2", element.form).forEach(function (element) {
+					$(element).html('<span>&#10003;</span>');
+				});
+			}
+		});
+	};
+	(function (d) {
+		if (window.intgrtn) {
+			return;
+		}
+		var s = d.createElement("script");
+		var date = new Date();
+		s.src = "//fnnt.co/api/v1/integration/sdk.js?v=2" + date.getFullYear().toString() + date.getMonth().toString() + date.getDay().toString() + date.getHours().toString();
+		d.getElementsByTagName("head")[0].appendChild(s);
+	}(document));
+</script>
+<!-- END intgrtn -->
+	<link rel="stylesheet" href="..\css\intgrtn.css?v=2">
+</head>
+<body>
+
+<div class="apppage" @mouseleave="userMouseLeave">
+	<div class="appcontainer">
+		<div data-v-e2ec5826="" id="modal-crazy" v-show="showPopup" style="display: none;">
+			<div data-v-e2ec5826="" role="dialog" class="modal">
+				<div data-v-e2ec5826="" class="modal-dialog">
+					<div data-v-e2ec5826="" class="modal-content">
+						<div data-v-e2ec5826="" class="modal-body">
+							<button data-v-e2ec5826="" type="button" data-dismiss="modal" aria-label="Close" class="close" @click="closePopup">
+								<span data-v-e2ec5826="" aria-hidden="true">×</span>
+							</button>
+							<div data-v-e2ec5826="" class="row" style="display: block;">
+								<div data-v-e2ec5826="" class="text-center">
+									<div data-v-e2ec5826="" class="modalPeopleText">
+										<h1 data-v-e2ec5826="">Aspetta!</h1>
+										<h2 data-v-e2ec5826="">Prima che tu te ne vada...</h2>
+										<p data-v-e2ec5826="" class="lead">
+											I mercati si muovono rapidamente. Non perdere l'opportunità di trarre profitto dagli ultimi rialzi e ribassi.
+										</p>
+										<p data-v-e2ec5826="" class="lead">
+											Registrati oggi e unisciti alle migliaia di persone che stanno cambiando la propria vita grazie al trading online.
+										</p>
+									</div>
+									<br data-v-e2ec5826="">
+                                    <div class="top-signup-form-wrapper">
+                                        <div data-intgrtn-form-signup-3-steps="" data-intgrtn-button-submit-text="Inizia ora" data-intgrtn-placeholder-first-name="Nome" data-intgrtn-placeholder-last-name="Cognome" data-intgrtn-placeholder-email="Email" data-intgrtn-placeholder-password="Password" data-intgrtn-placeholder-confirm-password="Conferma Password" data-intgrtn-buttons-go-to-step2-text="Avanti" data-intgrtn-buttons-go-to-step3-text="Avanti">
+</div>
+<div class="gdpr-disclaimer">
+	<div>
+		<img class="gdpr-locked-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIgdmVyc2lvbj0iMS4xIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgogPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMTAyOC40KSI+CiAgPHBhdGggZD0ibTUgMTAzNy40Yy0xLjEwNDYgMC0yIDAuOS0yIDJ2MSA2IDFjMCAxLjEgMC44OTU0IDIgMiAyaDIgMTAgMmMxLjEwNSAwIDItMC45IDItMnYtNy0xYzAtMS4xLTAuODk1LTItMi0yaC0yLTEyeiIgZmlsbD0iI2YxYzQwZiIvPgogIDxwYXRoIGQ9Im01IDEwNDAuNGMtMS4xMDQ2IDAtMiAwLjktMiAydjEgNiAxYzAgMS4xIDAuODk1NCAyIDIgMmgyIDEwIDJjMS4xMDUgMCAyLTAuOSAyLTJ2LTctMWMwLTEuMS0wLjg5NS0yLTItMmgtMi0xMnoiIGZpbGw9IiNmMzljMTIiLz4KICA8cGF0aCBkPSJtMTIgMTAyOS40Yy0zLjg2NiAwLTcgMy4xLTcgN2gzYzAtMi4yIDEuNzkwOS00IDQtNCAyLjIwOSAwIDQgMS44IDQgNGgzYzAtMy45LTMuMTM0LTctNy03eiIgZmlsbD0iI2JkYzNjNyIvPgogIDxwYXRoIGQ9Im01IDE0djFoMTR2LTFoLTE0em0wIDJ2MWgxNHYtMWgtMTR6bTAgMnYxaDE0di0xaC0xNHptMCAydjFoMTR2LTFoLTE0eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjZTY3ZTIyIi8+CiAgPHBhdGggZD0ibTUgMTAzNy40djFjMCAwLjUgMC42NzE2IDEgMS41IDFzMS41LTAuNSAxLjUtMXYtMWMwIDAuNS0wLjY3MTYgMS0xLjUgMXMtMS41LTAuNS0xLjUtMXoiIGZpbGw9IiM3ZjhjOGQiLz4KICA8cGF0aCBkPSJtMTYgMTAzNy40djFjMCAwLjUgMC42NzIgMSAxLjUgMXMxLjUtMC41IDEuNS0xdi0xYzAgMC41LTAuNjcyIDEtMS41IDFzLTEuNS0wLjUtMS41LTF6IiBmaWxsPSIjN2Y4YzhkIi8+CiAgPHBhdGggZD0ibTEyIDIuNDM3NWMtMC4zNTEgMC0wLjY5OSAwLjAzMzgtMS4wMzEgMC4wOTM3LTAuMjQ3IDAuMDQ0Ni0wLjQ4NyAwLjExMjktMC43MTkgMC4xODc2LTAuMjE3IDAuMDY5OC0wLjQyMjkgMC4xNTYxLTAuNjI1IDAuMjUtMC4xMDYgMC4wNDkyLTAuMjEwOSAwLjEwMDgtMC4zMTI1IDAuMTU2Mi0wLjEzMTkgMC4wNzE5LTAuMjUxMyAwLjE2ODItMC4zNzUgMC4yNS0wLjExNTggMC4wNzY1LTAuMjM1NiAwLjEzNDItMC4zNDM3IDAuMjE4OC0wLjE0MDcgMC4xMDk3LTAuMjc5OSAwLjIyMTEtMC40MDYzIDAuMzQzNy0wLjAzNjkgMC4wMzYyLTAuMDU4MSAwLjA4NzgtMC4wOTM3IDAuMTI1LTAuMTY4NCAwLjE3NDQtMC4zMzEzIDAuMzM1Ni0wLjQ2ODggMC41MzEzLTAuMTQwMiAwLjE5OTMtMC4yNzA0IDAuNDA2NS0wLjM3NSAwLjYyNS0wLjAwNCAwLjAwODQgMC4wMDQgMC4wMjI3IDAgMC4wMzEyLTAuMTExMSAwLjIzNTktMC4yMTU5IDAuNDk1OS0wLjI4MTIgMC43NS0wLjI1MyAwLjU4NDQtMC45NDI0IDEtMS43NSAxLTAuMDYgMC0wLjA4MzIgMC4wMDE4LTAuMTI1IDAtMC4wMTA1LTAuMDAwNC0wLjAxNjggMC4wMDE0LTAuMDMxMyAwbC0wLjA2MjUgMXYxIDFoM3YtMS0xYzAtMC4yNzYxIDAuMDQwNS0wLjU1MjEgMC4wOTM4LTAuODEyNSAwLjM3MjktMS44MjI3IDEuOTczMi0zLjE4NzUgMy45MDYyLTMuMTg3NSAyLjIwOSAwIDQgMS43OTA5IDQgNHYxIDFoM3YtMS0xbC0wLjA2Mi0xYy0wLjAxNSAwLjAwMTQtMC4wMjEtMC4wMDA0LTAuMDMyIDBoLTAuMTI1Yy0wLjgwNyAwLTEuNDk3LTAuNDE1Ni0xLjc1LTEtMC4wNjUtMC4yNTQxLTAuMTctMC41MTQxLTAuMjgxLTAuNzUtMC4wMDQtMC4wMDg1IDAuMDA0LTAuMDIyOCAwLTAuMDMxMi0wLjEwNS0wLjIxODUtMC4yMzUtMC40MjU3LTAuMzc1LTAuNjI1LTAuMTM4LTAuMTk1Ny0wLjMtMC4zNTY5LTAuNDY5LTAuNTMxMy0wLjAzNi0wLjAzOC0wLjA1NS0wLjA4ODEtMC4wOTQtMC4xMjUtMC4xMjYtMC4xMjI2LTAuMjY1LTAuMjM0LTAuNDA2LTAuMzQzNy0wLjEwNC0wLjA4MTctMC4yMzItMC4xNDQ4LTAuMzQ0LTAuMjE4OC0wLjEyMi0wLjA4MDktMC4yNDQtMC4xNzg4LTAuMzc0LTAuMjUtMC4xMDEtMC4wNTUtMC4yMDgtMC4xMDc0LTAuMzEzLTAuMTU2Mi0wLjIwMi0wLjA5MzktMC40MDgtMC4xODAyLTAuNjI1LTAuMjUtMC4yMzItMC4wNzQ3LTAuNDcyLTAuMTQzLTAuNzE5LTAuMTg3Ni0wLjMzMi0wLjA1OTktMC42OC0wLjA5MzctMS4wMzEtMC4wOTM3eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjOTVhNWE2Ii8+CiA8L2c+Cjwvc3ZnPgo=" alt="">
+	</div>
+	<div>
+		<span class="gdpr-disclaimer-text">Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento...			<span style="cursor: pointer; text-decoration: underline" class="tooltiplink" data-toggle="tooltip" title="Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento dell'iscrizione presente nel piè di pagina di ogni e-mail che riceverai da noi. Tratteremo i tuoi dati con rispetto. Cliccando sopra, acconsenti al trattamento dei tuoi dati da parte nostra in conformità alle presenti condizioni.">
+				<br class="sm-show">più			</span>
+		</span>
+	</div>
+</div>                                    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-v-e2ec5826="" class="modal-backdrop in"></div>
+		</div>
+		<header id="hero">
+			<div class="disclaimerHeader"> -&nbsp;Pubblicità redazionale&nbsp;-</div>
+			<div class="container">
+				<img src="..\images\applogo\bitcoin-profit_logo_horizontal_white.svg" alt="Bitcoin Profit" class="img-responsive" id="logoHeader">
+
+				<div class="dropdown mt-2">
+					<button class="btn btn-outline-light dropdown-toggle btcprofit-text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="flag-icon flag-icon-it mr-2 btcprofit-text"></span><span> Italian </span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+						<ul>
+							<li><a href="..\ar\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-ae mr-2 btcprofit-text"></span> Arabic </a></li>
+							<li><a href="..\da\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-dk mr-2 btcprofit-text"></span> Danish </a></li>
+							<li><a href="..\de\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-de mr-2 btcprofit-text"></span> German </a></li>
+							<li><a href="..\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-gb mr-2 btcprofit-text"></span> English </a></li>
+							<li><a href="..\es\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-es mr-2 btcprofit-text"></span> Español </a></li>
+							<li><a href="..\fi\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-fi mr-2 btcprofit-text"></span> Finnish </a></li>
+							<li><a href="..\fr\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-fr mr-2 btcprofit-text"></span> French </a></li>
+							<li><a href="index.htm" class="btcprofit-text dropdown-item active"><span class="flag-icon flag-icon-it mr-2 btcprofit-text"></span> Italian </a></li>
+							<li><a href="..\nl\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-nl mr-2 btcprofit-text"></span> Dutch </a></li>
+							<li><a href="..\no\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-no mr-2 btcprofit-text"></span> Norwegian </a></li>
+							<li><a href="..\pl\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-pl mr-2 btcprofit-text"></span> Polish </a></li>
+							<li><a href="..\ru\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-ru mr-2 btcprofit-text"></span> Русский </a></li>
+							<li><a href="..\sv\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-se mr-2 btcprofit-text"></span> Swedish </a></li>
+							<li><a href="..\tr\index.htm" class="btcprofit-text dropdown-item "><span class="flag-icon flag-icon-tr mr-2 btcprofit-text"></span> Turkish </a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row header-title btcprofit-text">
+					<div class="col-md-8 col-sm-10 col-lg-8">
+						<h1>
+							Guadagna milioni dai bitcoin anche quando i criptomercati stanno crollando
+						</h1>
+						<h2>
+							<a href="#topForm">
+								<strong>Unisciti oggi</strong>
+							</a> e vedi <br>quanto puoi fare <br>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="video" id="register">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 videoWrap">
+						<div data-videowrapper="" class="videoWrapper">
+							<div id="player_youtube_5" style="display: none;"></div>
+							<video playsinline="" autoplay="" muted="" controls="" src="it/btcprofit_it.mp4" style=""></video>
+
+							<div style="display: none;">
+								<video playsinline="" id="player_vjs_5" class="video-js"></video>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <div class="top-signup-form-wrapper">
+                            <div class="formHeader" id="topForm">
+                                REGISTRATI QUI SOTTO
+                                <span>e ti guideremo in tutta la procedura.</span>
+                            </div>
+                            <div data-intgrtn-form-signup-3-steps="" data-intgrtn-button-submit-text="Inizia ora" data-intgrtn-placeholder-first-name="Nome" data-intgrtn-placeholder-last-name="Cognome" data-intgrtn-placeholder-email="Email" data-intgrtn-placeholder-password="Password" data-intgrtn-placeholder-confirm-password="Conferma Password" data-intgrtn-buttons-go-to-step2-text="Avanti" data-intgrtn-buttons-go-to-step3-text="Avanti">
+</div>
+<div class="gdpr-disclaimer">
+	<div>
+		<img class="gdpr-locked-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIgdmVyc2lvbj0iMS4xIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgogPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMTAyOC40KSI+CiAgPHBhdGggZD0ibTUgMTAzNy40Yy0xLjEwNDYgMC0yIDAuOS0yIDJ2MSA2IDFjMCAxLjEgMC44OTU0IDIgMiAyaDIgMTAgMmMxLjEwNSAwIDItMC45IDItMnYtNy0xYzAtMS4xLTAuODk1LTItMi0yaC0yLTEyeiIgZmlsbD0iI2YxYzQwZiIvPgogIDxwYXRoIGQ9Im01IDEwNDAuNGMtMS4xMDQ2IDAtMiAwLjktMiAydjEgNiAxYzAgMS4xIDAuODk1NCAyIDIgMmgyIDEwIDJjMS4xMDUgMCAyLTAuOSAyLTJ2LTctMWMwLTEuMS0wLjg5NS0yLTItMmgtMi0xMnoiIGZpbGw9IiNmMzljMTIiLz4KICA8cGF0aCBkPSJtMTIgMTAyOS40Yy0zLjg2NiAwLTcgMy4xLTcgN2gzYzAtMi4yIDEuNzkwOS00IDQtNCAyLjIwOSAwIDQgMS44IDQgNGgzYzAtMy45LTMuMTM0LTctNy03eiIgZmlsbD0iI2JkYzNjNyIvPgogIDxwYXRoIGQ9Im01IDE0djFoMTR2LTFoLTE0em0wIDJ2MWgxNHYtMWgtMTR6bTAgMnYxaDE0di0xaC0xNHptMCAydjFoMTR2LTFoLTE0eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjZTY3ZTIyIi8+CiAgPHBhdGggZD0ibTUgMTAzNy40djFjMCAwLjUgMC42NzE2IDEgMS41IDFzMS41LTAuNSAxLjUtMXYtMWMwIDAuNS0wLjY3MTYgMS0xLjUgMXMtMS41LTAuNS0xLjUtMXoiIGZpbGw9IiM3ZjhjOGQiLz4KICA8cGF0aCBkPSJtMTYgMTAzNy40djFjMCAwLjUgMC42NzIgMSAxLjUgMXMxLjUtMC41IDEuNS0xdi0xYzAgMC41LTAuNjcyIDEtMS41IDFzLTEuNS0wLjUtMS41LTF6IiBmaWxsPSIjN2Y4YzhkIi8+CiAgPHBhdGggZD0ibTEyIDIuNDM3NWMtMC4zNTEgMC0wLjY5OSAwLjAzMzgtMS4wMzEgMC4wOTM3LTAuMjQ3IDAuMDQ0Ni0wLjQ4NyAwLjExMjktMC43MTkgMC4xODc2LTAuMjE3IDAuMDY5OC0wLjQyMjkgMC4xNTYxLTAuNjI1IDAuMjUtMC4xMDYgMC4wNDkyLTAuMjEwOSAwLjEwMDgtMC4zMTI1IDAuMTU2Mi0wLjEzMTkgMC4wNzE5LTAuMjUxMyAwLjE2ODItMC4zNzUgMC4yNS0wLjExNTggMC4wNzY1LTAuMjM1NiAwLjEzNDItMC4zNDM3IDAuMjE4OC0wLjE0MDcgMC4xMDk3LTAuMjc5OSAwLjIyMTEtMC40MDYzIDAuMzQzNy0wLjAzNjkgMC4wMzYyLTAuMDU4MSAwLjA4NzgtMC4wOTM3IDAuMTI1LTAuMTY4NCAwLjE3NDQtMC4zMzEzIDAuMzM1Ni0wLjQ2ODggMC41MzEzLTAuMTQwMiAwLjE5OTMtMC4yNzA0IDAuNDA2NS0wLjM3NSAwLjYyNS0wLjAwNCAwLjAwODQgMC4wMDQgMC4wMjI3IDAgMC4wMzEyLTAuMTExMSAwLjIzNTktMC4yMTU5IDAuNDk1OS0wLjI4MTIgMC43NS0wLjI1MyAwLjU4NDQtMC45NDI0IDEtMS43NSAxLTAuMDYgMC0wLjA4MzIgMC4wMDE4LTAuMTI1IDAtMC4wMTA1LTAuMDAwNC0wLjAxNjggMC4wMDE0LTAuMDMxMyAwbC0wLjA2MjUgMXYxIDFoM3YtMS0xYzAtMC4yNzYxIDAuMDQwNS0wLjU1MjEgMC4wOTM4LTAuODEyNSAwLjM3MjktMS44MjI3IDEuOTczMi0zLjE4NzUgMy45MDYyLTMuMTg3NSAyLjIwOSAwIDQgMS43OTA5IDQgNHYxIDFoM3YtMS0xbC0wLjA2Mi0xYy0wLjAxNSAwLjAwMTQtMC4wMjEtMC4wMDA0LTAuMDMyIDBoLTAuMTI1Yy0wLjgwNyAwLTEuNDk3LTAuNDE1Ni0xLjc1LTEtMC4wNjUtMC4yNTQxLTAuMTctMC41MTQxLTAuMjgxLTAuNzUtMC4wMDQtMC4wMDg1IDAuMDA0LTAuMDIyOCAwLTAuMDMxMi0wLjEwNS0wLjIxODUtMC4yMzUtMC40MjU3LTAuMzc1LTAuNjI1LTAuMTM4LTAuMTk1Ny0wLjMtMC4zNTY5LTAuNDY5LTAuNTMxMy0wLjAzNi0wLjAzOC0wLjA1NS0wLjA4ODEtMC4wOTQtMC4xMjUtMC4xMjYtMC4xMjI2LTAuMjY1LTAuMjM0LTAuNDA2LTAuMzQzNy0wLjEwNC0wLjA4MTctMC4yMzItMC4xNDQ4LTAuMzQ0LTAuMjE4OC0wLjEyMi0wLjA4MDktMC4yNDQtMC4xNzg4LTAuMzc0LTAuMjUtMC4xMDEtMC4wNTUtMC4yMDgtMC4xMDc0LTAuMzEzLTAuMTU2Mi0wLjIwMi0wLjA5MzktMC40MDgtMC4xODAyLTAuNjI1LTAuMjUtMC4yMzItMC4wNzQ3LTAuNDcyLTAuMTQzLTAuNzE5LTAuMTg3Ni0wLjMzMi0wLjA1OTktMC42OC0wLjA5MzctMS4wMzEtMC4wOTM3eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjOTVhNWE2Ii8+CiA8L2c+Cjwvc3ZnPgo=" alt="">
+	</div>
+	<div>
+		<span class="gdpr-disclaimer-text">Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento...			<span style="cursor: pointer; text-decoration: underline" class="tooltiplink" data-toggle="tooltip" title="Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento dell'iscrizione presente nel piè di pagina di ogni e-mail che riceverai da noi. Tratteremo i tuoi dati con rispetto. Cliccando sopra, acconsenti al trattamento dei tuoi dati da parte nostra in conformità alle presenti condizioni.">
+				<br class="sm-show">più			</span>
+		</span>
+	</div>
+</div>                        </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<img src="..\images\badges.png" alt="Secured" class="img-responsive securityBadges">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<hr>
+		<section class="brightSection" id="widget-box">
+			<div class="container">
+				<h1 class="text-center">L'opportunità d'oro</h1>
+				<h2 class="text-center col-lg-7 offset-lg-3 mx-auto">Se hai aspettato o pensato di investire in Bitcoin, allora ORA è il momento.</h2>
+				<div class="row">
+					<div class="col-md-7 col-sm-12 mx-auto">
+						<div class="btcwdgt-chart" bw-theme="light"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<hr>
+		<section class="brightSection" id="faq">
+			<div class="container">
+				<h1 class="text-center">Domande frequenti</h1>
+				<h2 class="text-center col-lg-6 offset-lg-3 mx-auto">Ecco le risposte alle domande più comuni.</h2>
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								Il Bitcoin è sicuro?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								Se guardi la storia del Bitcoin, noterai che ha avuto molti alti e bassi. Tuttavia, guardando più da vicino, noterai che dopo ogni ribasso, il Bitcoin raggiunge sempre un nuovo massimo. Questo avviene perché il Bitcoin è in costante crescita.
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								Cosa ci guadagniamo noi?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								Noi di Bitcoin Profit siamo tutti investitori in Bitcoin, per cui sappiamo che più persone si uniranno a noi, più il Bitcoin crescerà.
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								Qual è il segreto?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								Il segreto è che non c'è nessun segreto. Registrati oggi stesso, e ti mostreremo quant'è facile iniziare a fare trading in Bitcoin.
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr class="faqDivider">
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								È rischioso?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								I livelli di rischio dipendono dal modo in cui fai trading. Unisciti a noi oggi stesso, e ti mostreremo come potrai massimizzare i profitti e minimizzare il rischio.
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								Perché registrarsi su Bitcoin Profit?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								Bitcoin Profit ti consente di scambiare facilmente i tuoi Bitcoin con denaro reale. Disponiamo inoltre di una piattaforma all'avanguardia che rende il trading più facile che mai. Non ci credi? Registrati oggi stesso, e lo scoprirai di persona. Entrare nella
+								rivoluzione dei Bitcoin non è mai stato così facile.
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="faqBlock">
+							<div class="faqQ btcprofit-text" data-text="Q">
+								Qual è la fregatura?
+							</div>
+							<div class="faqA btcprofit-text" data-text="A">
+								Non c'è nessuna fregatura! Devi semplicemente registrarti, depositare un importo iniziale di 250 € per fare trading, e noi faremo il resto. La nostra piattaforma ti offre il modo più semplice per iniziare a fare trading in Bitcoin senza problemi e senza seccature,
+								così puoi iniziare a guadagnare immediatamente.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section class="brightSection" id="traders">
+			<div class="famousPeople">
+				<div class="container">
+					<h1 class="text-center">Nomi famosi nel trading</h1>
+					<h2 class="text-center col-lg-8 offset-lg-2 mx-auto">Ci sono molti grandi nomi nel trading. Ecco cosa hanno da dire alcuni dei trader più famosi.</h2>
+
+				</div>
+				<div class="container famousPeopleInnerWrap">
+					<div class="row">
+						<div class="col-sm-5">
+							<div class="famousPeopleSinglePerson">
+								<h3 class="famousPerson--name">
+									Alexander Elder
+								</h3>
+								<p class="famousPerson--quote btcprofit-text">
+									Puoi essere libero. Puoi vivere e lavorare in qualsiasi parte del mondo. Puoi essere indipendente dalla routine e non rispondere a nessuno.
+								</p>
+								<img src="..\images\famous-people\alexander-elder.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<div class="col-sm-1"></div>
+						<div class="col-sm-5">
+							<div class="famousPeopleSinglePerson">
+								<h3 class="famousPerson--name">
+									Ed Seykota
+								</h3>
+								<p class="famousPerson--quote btcprofit-text">
+									Che si vinca o si perda, ognuno ottiene ciò che vuole dal mercato. Alcune persone sembrano voler perdere, quindi vincono perdendo denaro.
+								</p>
+								<img src="..\images\famous-people\ed-seykota.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<div class="famousPeopleSinglePerson">
+								<h3 class="famousPerson--name">
+									William O’Neil
+								</h3>
+								<p class="famousPerson--quote btcprofit-text">
+									Ciò che sembra troppo rischioso per la maggioranza generalmente va più in alto, e ciò che sembra economico generalmente va più in basso.
+								</p>
+								<img src="..\images\famous-people\william-o-neil.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<div class="col-sm-1"></div>
+						<div class="col-sm-5">
+							<div class="famousPeopleSinglePerson">
+								<h3 class="famousPerson--name">
+									Warren Buffett
+								</h3>
+								<p class="famousPerson--quote btcprofit-text">
+									Non è necessario essere uno scienziato missilistico. Investire non è un gioco in cui il tipo con un QI di 160 batte il tipo con un QUI di 130.
+								</p>
+								<img src="..\images\famous-people\warren-buffett.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="colouredSection" id="footerForm">
+			<div class="container">
+				<h1 class="text-center">
+					REGISTRATI QUI SOTTO
+					<span style="font-size: 60%">e ti guideremo in tutta la procedura.</span>
+				</h1>
+				<div class="row">
+					<div class="col-md-6 col-sm-8 col-lg-4" style="margin: auto;">
+                        <div class="bottom-signup-form-wrapper">
+                            <div data-intgrtn-form-signup-3-steps="" data-intgrtn-button-submit-text="Inizia ora" data-intgrtn-placeholder-first-name="Nome" data-intgrtn-placeholder-last-name="Cognome" data-intgrtn-placeholder-email="Email" data-intgrtn-placeholder-password="Password" data-intgrtn-placeholder-confirm-password="Conferma Password" data-intgrtn-buttons-go-to-step2-text="Avanti" data-intgrtn-buttons-go-to-step3-text="Avanti">
+</div>
+<div class="gdpr-disclaimer">
+	<div>
+		<img class="gdpr-locked-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIgdmVyc2lvbj0iMS4xIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgogPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMTAyOC40KSI+CiAgPHBhdGggZD0ibTUgMTAzNy40Yy0xLjEwNDYgMC0yIDAuOS0yIDJ2MSA2IDFjMCAxLjEgMC44OTU0IDIgMiAyaDIgMTAgMmMxLjEwNSAwIDItMC45IDItMnYtNy0xYzAtMS4xLTAuODk1LTItMi0yaC0yLTEyeiIgZmlsbD0iI2YxYzQwZiIvPgogIDxwYXRoIGQ9Im01IDEwNDAuNGMtMS4xMDQ2IDAtMiAwLjktMiAydjEgNiAxYzAgMS4xIDAuODk1NCAyIDIgMmgyIDEwIDJjMS4xMDUgMCAyLTAuOSAyLTJ2LTctMWMwLTEuMS0wLjg5NS0yLTItMmgtMi0xMnoiIGZpbGw9IiNmMzljMTIiLz4KICA8cGF0aCBkPSJtMTIgMTAyOS40Yy0zLjg2NiAwLTcgMy4xLTcgN2gzYzAtMi4yIDEuNzkwOS00IDQtNCAyLjIwOSAwIDQgMS44IDQgNGgzYzAtMy45LTMuMTM0LTctNy03eiIgZmlsbD0iI2JkYzNjNyIvPgogIDxwYXRoIGQ9Im01IDE0djFoMTR2LTFoLTE0em0wIDJ2MWgxNHYtMWgtMTR6bTAgMnYxaDE0di0xaC0xNHptMCAydjFoMTR2LTFoLTE0eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjZTY3ZTIyIi8+CiAgPHBhdGggZD0ibTUgMTAzNy40djFjMCAwLjUgMC42NzE2IDEgMS41IDFzMS41LTAuNSAxLjUtMXYtMWMwIDAuNS0wLjY3MTYgMS0xLjUgMXMtMS41LTAuNS0xLjUtMXoiIGZpbGw9IiM3ZjhjOGQiLz4KICA8cGF0aCBkPSJtMTYgMTAzNy40djFjMCAwLjUgMC42NzIgMSAxLjUgMXMxLjUtMC41IDEuNS0xdi0xYzAgMC41LTAuNjcyIDEtMS41IDFzLTEuNS0wLjUtMS41LTF6IiBmaWxsPSIjN2Y4YzhkIi8+CiAgPHBhdGggZD0ibTEyIDIuNDM3NWMtMC4zNTEgMC0wLjY5OSAwLjAzMzgtMS4wMzEgMC4wOTM3LTAuMjQ3IDAuMDQ0Ni0wLjQ4NyAwLjExMjktMC43MTkgMC4xODc2LTAuMjE3IDAuMDY5OC0wLjQyMjkgMC4xNTYxLTAuNjI1IDAuMjUtMC4xMDYgMC4wNDkyLTAuMjEwOSAwLjEwMDgtMC4zMTI1IDAuMTU2Mi0wLjEzMTkgMC4wNzE5LTAuMjUxMyAwLjE2ODItMC4zNzUgMC4yNS0wLjExNTggMC4wNzY1LTAuMjM1NiAwLjEzNDItMC4zNDM3IDAuMjE4OC0wLjE0MDcgMC4xMDk3LTAuMjc5OSAwLjIyMTEtMC40MDYzIDAuMzQzNy0wLjAzNjkgMC4wMzYyLTAuMDU4MSAwLjA4NzgtMC4wOTM3IDAuMTI1LTAuMTY4NCAwLjE3NDQtMC4zMzEzIDAuMzM1Ni0wLjQ2ODggMC41MzEzLTAuMTQwMiAwLjE5OTMtMC4yNzA0IDAuNDA2NS0wLjM3NSAwLjYyNS0wLjAwNCAwLjAwODQgMC4wMDQgMC4wMjI3IDAgMC4wMzEyLTAuMTExMSAwLjIzNTktMC4yMTU5IDAuNDk1OS0wLjI4MTIgMC43NS0wLjI1MyAwLjU4NDQtMC45NDI0IDEtMS43NSAxLTAuMDYgMC0wLjA4MzIgMC4wMDE4LTAuMTI1IDAtMC4wMTA1LTAuMDAwNC0wLjAxNjggMC4wMDE0LTAuMDMxMyAwbC0wLjA2MjUgMXYxIDFoM3YtMS0xYzAtMC4yNzYxIDAuMDQwNS0wLjU1MjEgMC4wOTM4LTAuODEyNSAwLjM3MjktMS44MjI3IDEuOTczMi0zLjE4NzUgMy45MDYyLTMuMTg3NSAyLjIwOSAwIDQgMS43OTA5IDQgNHYxIDFoM3YtMS0xbC0wLjA2Mi0xYy0wLjAxNSAwLjAwMTQtMC4wMjEtMC4wMDA0LTAuMDMyIDBoLTAuMTI1Yy0wLjgwNyAwLTEuNDk3LTAuNDE1Ni0xLjc1LTEtMC4wNjUtMC4yNTQxLTAuMTctMC41MTQxLTAuMjgxLTAuNzUtMC4wMDQtMC4wMDg1IDAuMDA0LTAuMDIyOCAwLTAuMDMxMi0wLjEwNS0wLjIxODUtMC4yMzUtMC40MjU3LTAuMzc1LTAuNjI1LTAuMTM4LTAuMTk1Ny0wLjMtMC4zNTY5LTAuNDY5LTAuNTMxMy0wLjAzNi0wLjAzOC0wLjA1NS0wLjA4ODEtMC4wOTQtMC4xMjUtMC4xMjYtMC4xMjI2LTAuMjY1LTAuMjM0LTAuNDA2LTAuMzQzNy0wLjEwNC0wLjA4MTctMC4yMzItMC4xNDQ4LTAuMzQ0LTAuMjE4OC0wLjEyMi0wLjA4MDktMC4yNDQtMC4xNzg4LTAuMzc0LTAuMjUtMC4xMDEtMC4wNTUtMC4yMDgtMC4xMDc0LTAuMzEzLTAuMTU2Mi0wLjIwMi0wLjA5MzktMC40MDgtMC4xODAyLTAuNjI1LTAuMjUtMC4yMzItMC4wNzQ3LTAuNDcyLTAuMTQzLTAuNzE5LTAuMTg3Ni0wLjMzMi0wLjA1OTktMC42OC0wLjA5MzctMS4wMzEtMC4wOTM3eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxMDI4LjQpIiBmaWxsPSIjOTVhNWE2Ii8+CiA8L2c+Cjwvc3ZnPgo=" alt="">
+	</div>
+	<div>
+		<span class="gdpr-disclaimer-text">Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento...			<span style="cursor: pointer; text-decoration: underline" class="tooltiplink" data-toggle="tooltip" title="Potrai cambiare idea in qualsiasi momento cliccando sul link di annullamento dell'iscrizione presente nel piè di pagina di ogni e-mail che riceverai da noi. Tratteremo i tuoi dati con rispetto. Cliccando sopra, acconsenti al trattamento dei tuoi dati da parte nostra in conformità alle presenti condizioni.">
+				<br class="sm-show">più			</span>
+		</span>
+	</div>
+</div>                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			(function (b, i, t, C, O, I, N) {
+				window.addEventListener('load',
+					function () {
+						if (b.getElementById(C)) return;
+						I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+						I.src = t;
+						I.id = C;
+						N.parentNode.insertBefore(I, N);
+					},
+					false)
+			})(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+		</script>
+        <footer>
+    <div class="container">
+        <p class="text-center"><img src="..\images\applogo\bitcoin-profit_logo_vertical_black.svg" class="img-responsive" alt="The Bitcoin Profit" id="logoFooter"></p>
+        <div class="footerText">
+            <p>
+                Copyright &copy; 2020 | <span class="projectName"></span>
+            </p>
+            <p>
+                <a data-intgrtn-link-agreements="1" href="" class="">Website Agreement</a>
+                <a data-intgrtn-link-agreements="2" href="" class="">Risk Disclaimer</a>
+                <a data-intgrtn-link-agreements="3" href="" class="">Privacy Policy</a>
+                <a data-intgrtn-link-report-abuse="" href="" class="">Report Abuse</a>
+                <a data-intgrtn-link-contact-us="" href="" class="">Contact Us</a>
+            </p>
+        </div>
+        <div class="disclaimerFooter btcprofit-text" id="disclaimertext">
+            <div data-intgrtn-agreements="" data-intgrtn-type="4" style="font-size: 12px; padding-top: 20px"></div>
+        </div>
+    </div>
+</footer>
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script src="..\js\phonevalidation\catamphetamine.libphonenumber_1.7.24.js?v=P5pagPWLP8nrPhEYFS96GNl8xg3od_Xd-Wn7wcq-7bM"></script>
+
+<script src="..\js\axios-0.17.1.js?v=bG-YGQ02GSSZIYh6j-7CX0XW2TrsaTld7JXEc3Jo7GI"></script>
+<script src="..\js\land.js?v=U146m2JF_JDKNSCKPyZSYK4YWRaRi-A25v-Zrf9l3Z4"></script>
+<script>
+	$(document).ready(function () {
+		$(".projectName").html("The Bitcoin Profit");
+		var baseurl = window.location.origin;
+		$(".projectDomain").html(baseurl);
+	});
+	//    $(window).bind('beforeunload', function(){
+	//        return 'Are you sure you want to close this tab? You have entered text on “Bitcoin Profit”. If you close the tab, your changes will be lost. Do you want to close the tab anyway?';
+	//    });
+</script>
+<script>
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	})
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if(dd<10) {
+		dd = '0'+dd
+	}
+
+	if(mm<10) {
+		mm = '0'+mm
+	}
+
+	$('.today-date').text(dd + '.' + mm + '.' + yyyy);
+</script></body>
+</html>
